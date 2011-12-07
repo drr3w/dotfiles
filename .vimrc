@@ -19,3 +19,7 @@ set nowrap	  " Turn off long line wrapping
 set nowrapscan " Dont wrap when searching
 set showmode  " Always show which mode we're in
 set number
+
+set wildmode=list:full
+
+filetype indent plugin on

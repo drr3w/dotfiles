@@ -8,7 +8,7 @@ set guioptions +=R			" but keep it if the window is vertically split
 set guioptions -=T			" Remove the toolbar!
 set antialias
 
-colorscheme biogoo			" I have disabled number line highlighting in the 
+colorscheme desert " I have disabled number line highlighting in the 
 							" biogoo.vim file.
 
 

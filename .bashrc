@@ -21,7 +21,7 @@ alias du='du -h'
 alias df='df -h'
 alias ls='ls -Gh'
 alias grep='egrep --color=auto'
-alias vi='mvim'
+alias gvim='mvim'
 
 #-------------------------------------------------------------
 # Terminal colors
@@ -51,7 +51,7 @@ fi
 
 export PS1="[\u @ $COLOR\h$RESET: \W]\$> "
 #export PS1="\$ "
-export PATH=${PATH}:/Users/etch/android-sdk-macosx/platform-tools
+export PATH=${PATH}:/Users/etch/android-sdk-macosx/platform-tools:/Users/etch/android-sdk-macosx/tools
 export LSCOLORS='Fxgxfxfxcxdxdxhbadbxbx'
 #-------------------------------------------------------------
 # cdable_vars

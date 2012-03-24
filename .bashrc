@@ -66,3 +66,5 @@ export source="~/Source"
 shopt -s cdspell
 shopt -s cdable_vars
 shopt -s no_empty_cmd_completion
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

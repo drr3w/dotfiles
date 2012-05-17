@@ -51,7 +51,7 @@ fi
 
 export PS1="[\u @ $COLOR\h$RESET: \W]\$> "
 #export PS1="\$ "
-export PATH=${PATH}:/Users/etch/android-sdk-macosx/platform-tools:/Users/etch/android-sdk-macosx/tools
+export PATH=${PATH}:/Users/etch/android-sdk-macosx/platform-tools:/Users/etch/android-sdk-macosx/tools:/opt/subversion/bin
 export LSCOLORS='Fxgxfxfxcxdxdxhbadbxbx'
 #-------------------------------------------------------------
 # cdable_vars

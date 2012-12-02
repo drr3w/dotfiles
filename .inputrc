@@ -1,0 +1,17 @@
+#
+# .inputrc
+#
+
+# Not Working - bind down arrow to fwd histroy search
+#"\e[B":history-search-forward
+
+# Not Working - bind up arrow to backward histroy search
+#"\e[A":history-search-backward
+
+# replace common prefixes with '...'
+set completion-prefix-display-length 2
+set show-all-if-ambiguous on
+set completion-ignore-case On
+# Append a slash when autocompleting symbolic links to directories
+set mark-directories on
+set mark-symlinked-directories on

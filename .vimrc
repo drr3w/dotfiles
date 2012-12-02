@@ -3,7 +3,12 @@ set nocompatible
 syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
-set tabstop=4
+"
+" Some nice keyboard shortcuts
+"
+nmap <silent> <C-h> :nohlsearch <CR>
+
+set shiftwidth=4
 set expandtab "use spaces to indent
 set laststatus=2 " Always show status line
 
@@ -22,4 +27,6 @@ set number
 
 set wildmode=list:full
 
+call pathogen#infect()
+syntax on
 filetype indent plugin on

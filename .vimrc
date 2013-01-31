@@ -7,7 +7,12 @@ set bs=eol,start,indent
 " Some nice keyboard shortcuts
 "
 nmap <silent> <C-h> :nohlsearch <CR>
+nmap <silent> <M-Up> :wincmd k<CR>
+nmap <silent> <M-Down> :wincmd j<CR>
+nmap <silent> <M-Left> :wincmd h<CR>
+nmap <silent> <M-Right> :wincmd l<CR>
 
+set tabstop=4    
 set shiftwidth=4 " this uses 4 spaces for a tab
 set expandtab    " always use spaces to indent
 set laststatus=2 " Always show status line
@@ -28,5 +33,4 @@ set number
 set wildmode=list:full
 
 call pathogen#infect()
-syntax on
 filetype indent plugin on

@@ -10,8 +10,6 @@ set guioptions +=R			" but keep it if the window is vertically split
 set guioptions -=T			" Remove the toolbar!
 set antialias
 
-colorscheme zenburn " I have disabled number line highlighting in the 
-					" zenburn.vim file.
 
 
 "  

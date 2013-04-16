@@ -3,6 +3,10 @@ set nocompatible
 syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
+
+colorscheme zenburn " I have disabled number line highlighting in the 
+					" zenburn.vim file.
+
 "
 " Some nice keyboard shortcuts
 "

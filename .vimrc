@@ -7,10 +7,14 @@ set bs=eol,start,indent
 " Some nice keyboard shortcuts
 "
 nmap <silent> <C-h> :nohlsearch <CR>
-nmap <silent> <M-Up> :wincmd k<CR>
-nmap <silent> <M-Down> :wincmd j<CR>
-nmap <silent> <M-Left> :wincmd h<CR>
-nmap <silent> <M-Right> :wincmd l<CR>
+nmap <silent> <D-Up> :wincmd k<CR>
+nmap <silent> <D-Down> :wincmd j<CR>
+nmap <silent> <D-Left> :wincmd h<CR>
+nmap <silent> <D-Right> :wincmd l<CR>
+nmap <silent> <C-T> :TagbarToggle<CR>
+
+set showmatch
+set matchtime=3
 
 set tabstop=4    
 set shiftwidth=4 " this uses 4 spaces for a tab
@@ -32,5 +36,15 @@ set number
 
 set wildmode=list:full
 
-call pathogen#infect()
+execute pathogen#infect()
 filetype indent plugin on
+
+"
+" Syntastic settings
+" 
+
+let g:syntastic_mode_map = { 'mode' : 'active',
+                            \'active_filetypes' : [],
+                            \'passive_filetypes' : [] }
+
+let g:syntastic_python_checkers=['flake8'] " use flake8 syntax/style checker

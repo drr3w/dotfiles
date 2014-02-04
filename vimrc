@@ -4,8 +4,8 @@ syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
 
-colorscheme zenburn " I have disabled number line highlighting in the 
-					" zenburn.vim file.
+colorscheme slate  
+				
 
 "
 " Some nice keyboard shortcuts
@@ -16,6 +16,7 @@ nmap <silent> <D-Down> :wincmd j<CR>
 nmap <silent> <D-Left> :wincmd h<CR>
 nmap <silent> <D-Right> :wincmd l<CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
+nmap <silent> <C-N> :NERDTreeToggle<CR>
 
 set showmatch
 set matchtime=3

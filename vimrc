@@ -40,16 +40,3 @@ set showmode  " Always show which mode we're in
 set number
 
 set wildmode=list:full
-
-execute pathogen#infect()
-filetype indent plugin on
-
-"
-" Syntastic settings
-" 
-
-let g:syntastic_mode_map = { 'mode' : 'active',
-                            \'active_filetypes' : [],
-                            \'passive_filetypes' : [] }
-
-let g:syntastic_python_checkers=['flake8'] " use flake8 syntax/style checker

@@ -11,7 +11,7 @@
 # replace common prefixes with '...'
 set completion-prefix-display-length 2
 set show-all-if-ambiguous on
-set completion-ignore-case On
+set completion-ignore-case on
 # Append a slash when autocompleting symbolic links to directories
 set mark-directories on
 set mark-symlinked-directories on

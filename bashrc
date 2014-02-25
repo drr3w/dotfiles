@@ -30,7 +30,7 @@ alias gvim='mvim'
 GREEN="\[\033[0;32m\]"
 YELLOW="\[\033[1;33m\]"
 RED="\[\033[0;31m\]"
-RESET='\e[0m'
+RESET='\[\e[0m'
 
 #-------------------------------------------------------------
 # Change the prompt color based on where we're logged in

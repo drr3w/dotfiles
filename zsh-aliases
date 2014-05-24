@@ -15,3 +15,5 @@ alias h2='ssh prometheus@andrew1-h2.pa.dev'
 #----------------------------------#
 
 alias h='history'
+alias ls='ls -p'
+alias grep='egrep -ia --color=auto'

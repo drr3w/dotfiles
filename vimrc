@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
+Plugin 'majutsushi/tagbar'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -43,35 +44,21 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set nocompatible
-
+set clipboard=unnamed " set clipboard to system clipboard
 syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
 
-colorscheme slate  
-
-"
-" Adding todo file type for syntax highlighting
-"				
-au BufRead,BufNewFile *.todo setfiletype todo
-
-"
-" Allows files that have #todo in the first 100 lines to 
-" be recognized and highlighted 
-"
-
-if getline(1) =~? '^#\?TODO\>' 
-    setfiletype todo 
-endif 
+colorscheme zenburn  
 
 "
 " Some nice keyboard shortcuts
 "
 nmap <silent> <C-h> :nohlsearch <CR>
-nmap <silent> <D-Up> :wincmd k<CR>
-nmap <silent> <D-Down> :wincmd j<CR>
-nmap <silent> <D-Left> :wincmd h<CR>
-nmap <silent> <D-Right> :wincmd l<CR>
+nmap <silent> <M-Up> :wincmd k<CR>
+nmap <silent> <M-Down> :wincmd j<CR>
+nmap <silent> <M-Left> :wincmd h<CR>
+nmap <silent> <M-Right> :wincmd l<CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 
@@ -79,6 +66,7 @@ set showmatch
 set matchtime=3
 
 set tabstop=4    
+set textwidth=120 " sets word wrap at 120 char
 set shiftwidth=4 " this uses 4 spaces for a tab
 set expandtab    " always use spaces to indent
 set laststatus=2 " Always show status line
@@ -91,7 +79,13 @@ set incsearch  	  " search incrementally
 set hlsearch	  " highlight search
 set ignorecase	  " ignore case during searches
 set smartindent
-set nowrap	  " Turn off long line wrapping
+"set nowrap	  " Turn off long line wrapping
+set wrap
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
+
 set nowrapscan " Dont wrap when searching
 set showmode  " Always show which mode we're in
 set number

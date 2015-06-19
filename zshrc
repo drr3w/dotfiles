@@ -23,6 +23,7 @@ autoload -U colors && colors
 alias grep='egrep --color=auto -i'
 alias pss='ps caux | grep $1'
 alias h='history'
+alias ls='ls -G'
 # up adn down key bindings for history search 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward

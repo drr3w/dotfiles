@@ -4,7 +4,7 @@
 
 highlight Pmenu guibg=grey gui=bold " set the colors for the insertion pop-up   
 
-set guifont=Consolas:h12
+set guifont=Inconsolata:h12
 set guioptions -=r			" Remove the scrollbar!
 set guioptions +=R			" but keep it if the window is vertically split
 set guioptions -=T			" Remove the toolbar!

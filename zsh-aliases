@@ -2,5 +2,23 @@
 # aliases for zsh go here 
 #
 
+<<<<<<< HEAD
 alias h='history'
 alias grep='egrep -ia --color=auto' 
+=======
+#----------------------------------#
+#  ssh aliases                     #
+#----------------------------------#
+
+alias bigmac='ssh etch@droo5ki.dnsdojo.org -p 1337'
+alias h1='ssh prometheus@andrew1-h1.pa.dev'
+alias h2='ssh prometheus@andrew1-h2.pa.dev'
+
+#----------------------------------#
+#  other custom aliases            #
+#----------------------------------#
+
+alias h='history'
+alias ls='ls -p'
+alias grep='egrep -ia --color=auto'
+>>>>>>> work

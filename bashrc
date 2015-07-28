@@ -10,6 +10,12 @@ if [ -f /etc/bashrc ]; then
 fi
 
 #-------------------------------------------------------------
+# Git Bash completion
+#-------------------------------------------------------------
+
+source ~/.git-completion.sh
+
+#-------------------------------------------------------------
 # Aliases
 #-------------------------------------------------------------
 
@@ -50,9 +56,8 @@ fi
 # Useful environmentals
 #-------------------------------------------------------------
 
-export PS1="[\u @ $COLOR\h$RESET \W]\$> "
+export PS1="[$GREEN\u$RESET:\W]\$> "
 #export PS1="\$ "
-export PATH=${PATH}:/Users/etch/android-sdk-macosx/platform-tools:/Users/etch/android-sdk-macosx/tools:/opt/subversion/bin
 export LSCOLORS='Fxgxfxfxcxdxdxhbadbxbx'
 
 # Less Colorization for Man Pages
@@ -69,7 +74,6 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # cdable_vars
 #-------------------------------------------------------------
 
-export source="~/Source"
 
 #-------------------------------------------------------------
 # Shell options
@@ -79,4 +83,3 @@ shopt -s cdspell
 shopt -s cdable_vars
 shopt -s no_empty_cmd_completion
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

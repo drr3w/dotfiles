@@ -7,14 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="simple"
 
-<<<<<<< HEAD
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-=======
 # Source aliases
 source ~/.dotfiles/zsh-aliases
->>>>>>> work
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -53,13 +47,6 @@ source ~/.dotfiles/zsh-aliases
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-<<<<<<< HEAD
-source ~/.dotfiles/zsh-aliases
-
-# User configuration
-
-export PATH="/Users/etch/Dev/pebble-dev/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
-=======
 
 # User configuration
 
@@ -74,7 +61,6 @@ export LESS_TERMCAP_so=$'\E[48;5;88m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 
->>>>>>> work
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

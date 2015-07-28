@@ -4,7 +4,7 @@ syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
 
-colorscheme zenburn
+colorscheme codeschool
 				
 
 "

@@ -52,7 +52,18 @@ source ~/.dotfiles/zsh-aliases
 
 # User configuration
 
+export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
+
 export PATH="/Users/etch/Dev/pebble-dev/arm-cs-tools/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
+
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;65;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+#export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_se=$'\E[38;5;255m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;172m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions

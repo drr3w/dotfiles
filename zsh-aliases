@@ -1,6 +1,5 @@
 #
 # aliases for zsh go here 
 #
-
 alias h='history'
 alias grep='egrep -ia --color=auto' 

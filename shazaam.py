@@ -1,19 +1,19 @@
 #!/usr/bin.env python
 
-"""Run this script to symlink the rc files in the dotfiles repo into the users home directory.
-
-    TODO:
-        - move files into an rc file directory so it'll be easier to deal with the files
-        -
-"""
 from commands import getoutput as getoutput
+import re
 
-files = getoutput("ls").split("\n")
-print "files: %s" % files
+regex = r'.*rc\n'
 
-for file in files:
-    print "calling getoutput('ln -s %s ~/.%s')..." % (file, file)
-    #result = getouput("ln -s %s ~/.%s") % (file, file)
+
+files = getoutput("ls")
+print "files: %s %s" % (files,type(files))
+
+rc_files = re.findall(regex, files, re.IGNORECASE)
+print rc_files
+for file in rc_files:
+    file = file.strip('\n')
+    result = getoutput("ln -s %s ~/.%s") % (file, file)
 
 
 

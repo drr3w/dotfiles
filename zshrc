@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

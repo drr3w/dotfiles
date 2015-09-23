@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
-
+export TERM="screen-256color"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # colorize man pages

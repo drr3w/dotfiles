@@ -44,16 +44,16 @@ source ~/.dotfiles/zsh-aliases
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git jira python)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
-
+export JIRA_URL='https://jira.accellion.net' # URL for the JIRA zsh plugin
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-
+export TERM="screen-256color"
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;38;5;65m'  # begin bold

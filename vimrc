@@ -48,8 +48,10 @@ set clipboard=unnamed " set clipboard to system clipboard
 syntax enable	  " Turn on syntax highlighting
 set bs=eol,start,indent
 
+let mapleader=","
 
 colorscheme codeschool
+
 "
 " Some nice keyboard shortcuts
 "
@@ -60,6 +62,10 @@ nmap <silent> <M-Left> :wincmd h<CR>
 nmap <silent> <M-Right> :wincmd l<CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
+
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 set showmatch
 set matchtime=3

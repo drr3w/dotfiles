@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
 export JIRA_URL='https://jira.accellion.net' # URL for the JIRA zsh plugin
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TERM="screen-256color"
 
 # colorize man pages

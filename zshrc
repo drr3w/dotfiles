@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
 export JIRA_URL='https://jira.accellion.net' # URL for the JIRA zsh plugin
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
 export TERM="screen-256color"
 
 # colorize man pages
@@ -63,6 +63,11 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[48;5;88m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
+
+# functions?
+#
+
+function phab() { cd ~/Source/$@ ; git show $@ | grep review.pa | cut -d ' ' -f7 | xargs open }
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

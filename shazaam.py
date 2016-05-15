@@ -6,30 +6,29 @@
 #
 ######################################################################
 
-""" TODO:
-    - 
-"""
-
 from commands import getoutput
-import re
 import os
+import shutil
 
-rc_regex = r'([a-zA-Z]+rc\n)'
+HOMEDIR = os.environ['HOME']
 
-def copy_to_homedir():
-    """ Copy dotfile into home directory and back up the originals """
-            
+
+def backup_file(src):
+    """ Copy given filename :src: to :src:.orig """ 
+    shutil.copy(os.path.join(HOMEDIR, src), os.path.join(HOMEDIR, src + ".orig")
+
+
+def copy_to_homedir(src):
+    """ Copy dotfile :src: into home directory. """
+    shutil.copy(os.path.join(HOMEDIR, src), os.path.join(HOMEDIR, src)
+
+if __name__ == '__main__':
+    
     files_to_copy = ['vimrc', 'zshrc', 'tmux.conf', 'inputrc']
     
-    
-
-
-
-
-files = getoutput("ls")
-
-rc_files = re.findall(rc_regex, files, re.IGNORECASE)
-print rc_files
-for file in rc_files:
-    file = file.strip('\n')
-    result = getoutput("ln -s ~/.dotfiles/%s ~/.%s" % (file,file))
+    for dotfile in files_to_copy:
+        if dotfile in HOMEDIR:
+            backup_file(dotfile) 
+            copy_to_homedir(dotfile)
+        else
+            copy_to_homedir(dotfile)

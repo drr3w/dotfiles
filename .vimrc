@@ -56,10 +56,6 @@ colorscheme codeschool
 " Some nice keyboard shortcuts
 "
 nmap <silent> <C-h> :nohlsearch <CR>
-nmap <silent> <M-Up> :wincmd k<CR>
-nmap <silent> <M-Down> :wincmd j<CR>
-nmap <silent> <M-Left> :wincmd h<CR>
-nmap <silent> <M-Right> :wincmd l<CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 
@@ -87,6 +83,8 @@ set nowrap	        " Turn off long line wrapping
 set nowrapscan      " Dont wrap when searching
 set showmode        " Always show which mode we're in
 set number          " show line numbers
+set relativenumber  " use relative line numbers
+set cursorline      " highlight the line the cursor is currently on
 
 set wildmode=list:full
 

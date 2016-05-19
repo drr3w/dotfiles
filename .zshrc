@@ -44,7 +44,7 @@ source ~/.dotfiles/zsh-aliases
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git jira python)
+plugins=(git jira python tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,8 +52,9 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
 export JIRA_URL='https://jira.accellion.net' # URL for the JIRA zsh plugin
+export PHAB_URL='https://review.pa.dev' # URL for the Phabricator server
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
-export TERM="screen-256color"
+#export TERM="screen-256color"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -67,7 +68,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 # functions?
 #
 
-function phab() { cd ~/Source/$@ ; git show $@ | grep review.pa | cut -d ' ' -f7 | xargs open }
+function phab() { open "$PHAB_URL/$@" }
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

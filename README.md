@@ -7,6 +7,7 @@ Repo to backup and share dotfiles. I have lost these too many times. :-\
 
 ##### Requirements:
 - .vimrc requires vundle be installed.
+- probably other things that im not thinking of now
 
 ##### dotfiles get:
 

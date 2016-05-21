@@ -6,9 +6,10 @@
 #
 ######################################################################
 
-from commands import getoutput
 import os
+import errno 
 import shutil
+import logging
 
 HOMEDIR = os.environ['HOME']
 
@@ -28,13 +29,16 @@ def backup_file(src):
         
         TODO: add function to create a random string to append to original filename
     """
-    shutil.copy(src, os.path.join(HOMEDIR, src.split('/')[-1] + ".bak"))
+    shutil.move(src, os.path.join(HOMEDIR, src.split('/')[-1] + ".bak"))
 
 
 def copy_to_homedir(src):
     """ Copy dotfile :src: into home directory. """
-    shutil.copy(src, os.path.join(HOMEDIR, src.split('/')[-1]))
-
+    try:
+        os.symlink(src, os.path.join(HOMEDIR, src.split('/')[-1]))
+    except OSError as e:
+        if e.errno == errno.EEXIST:
+            print "Symlink to {} already exists.".format(src.split('/')[-1])
 
 if __name__ == '__main__':
     

@@ -29,11 +29,13 @@ def backup_file(src):
         
         TODO: add function to create a random string to append to original filename
     """
-    shutil.move(src, os.path.join(HOMEDIR, src.split('/')[-1] + ".bak"))
+    os.rename(src, os.path.join(HOMEDIR, src.split('/')[-1] + ".bak"))
 
 
-def copy_to_homedir(src):
-    """ Copy dotfile :src: into home directory. """
+
+
+def symlink_to_homedir(src):
+    """ Link dotfile :src: into home directory. """
     try:
         os.symlink(src, os.path.join(HOMEDIR, src.split('/')[-1]))
     except OSError as e:
@@ -45,8 +47,8 @@ if __name__ == '__main__':
     files_to_copy = get_dotfiles(os.path.join(HOMEDIR,'.dotfiles')) 
 
     for dotfile in files_to_copy: 
-        if dotfile.split('/')[-1] in os.listdir(os.environ['HOME']):
+        if dotfile.split('/')[-1] in os.listdir(HOMEDIR):
             backup_file(dotfile)
-            copy_to_homedir(dotfile)
+            symlink_to_homedir(dotfile)
         else:
-            copy_to_homedir(dotfile)
+            symlink_to_homedir(dotfile)

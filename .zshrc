@@ -34,7 +34,9 @@ source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/zsh/zsh-aliases
 
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
+export PATH="/usr/local/Cellar:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
+export LS_COLORS=gxfxcxdxbxegedabagacad
+
 #export TERM="screen-256color"
 export LSCOLORS="fxGxcxdxbxegedabagacad"
 

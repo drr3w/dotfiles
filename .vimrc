@@ -34,6 +34,7 @@ set bs=eol,start,indent
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
+nmap <silent> <C-L> :call ColorColumnCToggle()<CR>
 
 " this remaps code folds to <space>
 nnoremap <space> za  
@@ -46,6 +47,15 @@ nnoremap <space> za
 augroup vimrc_autocmds
   autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
   autocmd BufEnter *.py match OverLength /\%80v.*/
+augroup END
+
+"----------------------------------------------------------------------------------------------------------------------
+" Autocommands
+"----------------------------------------------------------------------------------------------------------------------
+
+augroup vimrc_autocmds
+      autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
+      autocmd BufEnter *.py match OverLength /\%120v.*/
 augroup END
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -85,3 +95,15 @@ set wildmode=list:full
 set textwidth=79        " sets word wrap at 80 char
 
 set nolist              " turn off displaying certain hidden characters
+
+"----------------------------------------------------------------------------------------------------------------------
+" User defined functions
+"----------------------------------------------------------------------------------------------------------------------
+
+function! ColorColumnCToggle()
+    if &cc
+        setlocal cc=0
+    else
+        setlocal cc=120
+    endif
+endfunction

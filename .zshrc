@@ -36,6 +36,7 @@ source ~/.dotfiles/zsh/zsh-aliases
 export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
 #export TERM="screen-256color"
+export LSCOLORS="fxGxcxdxbxegedabagacad"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -51,4 +52,3 @@ export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 #----------------------------------------------------------------------------------------------------------------------
 
 function phab() { open "$PHAB_URL/$@" }
-

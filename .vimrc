@@ -15,17 +15,42 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
-filetype plugin indent on    " required
 
-set nocompatible
+"----------------------------------------------------------------------------------------------------------------------
+" Syntastic settings
+"----------------------------------------------------------------------------------------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"Use flake8
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore="E501,E128"'
+
+"----------------------------------------------------------------------------------------------------------------------
+" Vim specific stuff
+"----------------------------------------------------------------------------------------------------------------------
+
+filetype plugin indent on    " required, turns on loading filetype specific plugin and indent files
+
+set nocompatible             " make vim less vi-compatible and more useful
 set clipboard=unnamed        " set clipboard to system clipboard
 syntax enable	             " Turn on syntax highlighting
-set bs=eol,start,indent
+set bs=eol,start             " controlling how backspace behaves. see :help bs
 
 "----------------------------------------------------------------------------------------------------------------------
 " Some nice keyboard shortcuts
@@ -34,9 +59,9 @@ set bs=eol,start,indent
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
-nmap <silent> <C-L> :call ColorColumnCToggle()<CR>
+nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-" this remaps code folds to <space>
+" this below remaps code folds to <space>
 nnoremap <space> za  
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -46,7 +71,7 @@ nnoremap <space> za
 " PEP-008: This colors lines over 80 characters long, python files only.
 augroup vimrc_autocmds
   autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
-  autocmd BufEnter *.py match OverLength /\%80v.*/
+  autocmd BufEnter *.py match OverLength /\%120v.*/
 augroup END
 
 "----------------------------------------------------------------------------------------------------------------------

@@ -50,7 +50,7 @@ filetype plugin indent on    " required, turns on loading filetype specific plug
 set nocompatible             " make vim less vi-compatible and more useful
 set clipboard=unnamed        " set clipboard to system clipboard
 syntax enable	             " Turn on syntax highlighting
-set bs=eol,start             " controlling how backspace behaves. see :help bs
+set bs=eol,start,indent             " controlling how backspace behaves. see :help bs
 
 "----------------------------------------------------------------------------------------------------------------------
 " Some nice keyboard shortcuts
@@ -92,7 +92,7 @@ set laststatus=2        " Always show status line
 set foldlevel=99        " set all folds unfolded by default
 set ch=2                " This sets the command height to 2 rows
 set history=50          " Command history length
-set ruler               " Always show the cursor
+set ruler               " Always show the cursor position in the statusbar
 set showcmd             " display incomplete commands
 set incsearch           " search incrementally
 set hlsearch            " highlight search

@@ -39,7 +39,7 @@ let g:syntastic_check_on_wq = 0
 
 "Use flake8
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E128"'
+let g:syntastic_python_flake8_args = '--ignore="E501,E128,E127"'
 
 "----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff
@@ -79,6 +79,7 @@ augroup END
 "----------------------------------------------------------------------------------------------------------------------
 
 colorscheme codeschool
+highlight ColorColumn ctermbg=124
 
 set fileformat=unix
 

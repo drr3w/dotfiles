@@ -15,12 +15,12 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
-"Plugin 'ervandew/supertab'
+Plugin 'scrooloose/Syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/syntastic'
+Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 
@@ -30,6 +30,7 @@ call vundle#end()            " required
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -40,6 +41,12 @@ let g:syntastic_check_on_wq = 0
 "Use flake8
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore="E501,E128"'
+
+
+"----------------------------------------------------------------------------------------------------------------------
+" indentLine  settings
+"----------------------------------------------------------------------------------------------------------------------
+let g:indentLine_color_term = 124
 
 "----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff

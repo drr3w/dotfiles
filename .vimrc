@@ -25,14 +25,19 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
-" Syntastic settings
+" Statusline  settings
 "----------------------------------------------------------------------------------------------------------------------
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%{fugitive#statusline()}
 set statusline+=%*
+set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
+"----------------------------------------------------------------------------------------------------------------------
+" Syntastic settings
+"----------------------------------------------------------------------------------------------------------------------
+"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1

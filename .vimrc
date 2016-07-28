@@ -30,7 +30,6 @@ call vundle#end()            " required
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%{fugitive#statusline()}
 set statusline+=%*
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 

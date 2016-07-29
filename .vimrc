@@ -20,7 +20,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Yggdroot/indentLine'
-Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 
@@ -28,11 +28,20 @@ call vundle#end()            " required
 " Statusline  settings
 "----------------------------------------------------------------------------------------------------------------------
 
-set statusline+=%#warningmsg#
+set statusline=[%f]                               " filename
+set statusline+=%#todo#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline+=%*                                " switch back to normal statusline highlight
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
+"----------------------------------------------------------------------------------------------------------------------
+" Tagbar settings
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:tagbar_sort       = 0     " sort tags by where they appear in teh file
+let g:tagbar_autofocus  = 1     " automatically move cursor into the tagbar when it activates
+let g:tagbar_left       = 1     " tagbar opens on the left
+let g:tagbar_width      = 40    " tagbar is 40 characters wide
 "----------------------------------------------------------------------------------------------------------------------
 " Syntastic settings
 "----------------------------------------------------------------------------------------------------------------------
@@ -44,7 +53,7 @@ let g:syntastic_check_on_wq = 0
 
 "Use flake8
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E128,E127"'
+let g:syntastic_python_flake8_args = '--ignore="E501,E128,E127,W291,W293"'
 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -72,8 +81,9 @@ nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
+nmap <silent> <C-I> :IndentLinesToggle<CR>
 " this below remaps code folds to <space>
-nnoremap <space> za  
+nmap <space> za  
 
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
@@ -89,7 +99,9 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme codeschool
+colorscheme solarized
+set background=dark
+
 highlight ColorColumn ctermbg=124
 
 set fileformat=unix
@@ -119,10 +131,6 @@ set relativenumber      " use relative line numbers
 set cursorline          " highlight the line the cursor is currently on
 set foldmethod=indent   " code fold based on indentation 
 set wildmode=list:full
-
-set textwidth=79        " sets word wrap at 80 char
-
-set nolist              " turn off displaying certain hidden characters
 
 "----------------------------------------------------------------------------------------------------------------------
 " User defined functions

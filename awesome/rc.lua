@@ -237,9 +237,13 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    -- My own custom keybinding
+    -- My own custom keybindings
     awful.key({ modkey }, "r",     function () awful.util.spawn_with_shell("dmenu_run -b -fn 'Droid Sans Mono-8' &") end),
     awful.key({ modkey, "Shift" }, "XF86Eject",     function () awful.util.spawn_with_shell("xscreensaver-command --lock") end),
+    
+    -- Keyboard backlight mappings
+    awful.key({ }, "XF86MonBrightnessDown",     function () awful.util.spawn_with_shell("xbacklight -dec 5") end),
+    awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 5") end),
 
     -- Navigation
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),

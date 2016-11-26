@@ -30,15 +30,12 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #----------------------------------------------------------------------------------------------------------------------
 
+export PATH=/usr/local/bin/go:$PATH
+export GOPATH=$HOME/Code/go
+export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
+
 # Source aliases
 source ~/.dotfiles/zsh/zsh-aliases
-
-export EDITOR=`which vim` # fix for git commait -a issue if $EDITOR is unset
-export PATH="/usr/local/Cellar:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/arcanist_install/arcanist/bin"
-export LS_COLORS=gxfxcxdxbxegedabagacad
-
-#export TERM="screen-256color"
-export LSCOLORS="fxGxcxdxbxegedabagacad"
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

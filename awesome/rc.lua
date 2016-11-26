@@ -244,6 +244,11 @@ globalkeys = awful.util.table.join(
     -- Keyboard backlight mappings
     awful.key({ }, "XF86MonBrightnessDown",     function () awful.util.spawn_with_shell("xbacklight -dec 5") end),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 5") end),
+    
+    -- Keyboard Volume controls
+    awful.key({ }, "XF86AudioMute",     function () awful.util.spawn_with_shell("amixer set 'Master' 0%") end),
+    awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn_with_shell("amixer set 'Master' 5%-") end),
+    awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn_with_shell("amixer set 'Master' 5%+") end),
 
     -- Navigation
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),

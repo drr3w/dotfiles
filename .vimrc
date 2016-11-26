@@ -27,7 +27,7 @@ call vundle#end()            " required
 " Statusline  settings
 "----------------------------------------------------------------------------------------------------------------------
 
-set statusline=[%f]                               " filename
+set statusline=[%F]                               " filename
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme solarized
+colorscheme zenburn
 set background=dark
 
 highlight ColorColumn ctermbg=124

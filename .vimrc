@@ -83,7 +83,7 @@ augroup END
 "----------------------------------------------------------------------------------------------------------------------
 
 colorscheme zenburn
-set background=dark
+"set background=dark
 
 highlight ColorColumn ctermbg=124
 

@@ -306,7 +306,7 @@ else
     endif
     hi FoldColumn    guibg=#333333                         ctermbg=236 ctermfg=109
     hi Folded        guibg=#333333                         ctermbg=236 ctermfg=109
-    hi LineNr        guifg=#9fafaf guibg=#262626           ctermfg=248 ctermbg=235
+    hi LineNr        guifg=#9fafaf guibg=#262626           ctermfg=248 ctermbg=237
     hi NonText       guifg=#5b605e gui=bold                ctermfg=240
     hi Pmenu         guibg=#2c2e2e guifg=#9f9f9f           ctermfg=248 ctermbg=235
     hi PmenuSel      guibg=#242424 guifg=#d0d0a0 gui=bold  ctermfg=187 ctermbg=235 cterm=bold

@@ -11,6 +11,15 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- Redshift
+local redshift = require("redshift")
+-- set binary path (optional)
+redshift.redshift = "/usr/bin/redshift"
+-- -- set additional redshift arguments (optional)
+redshift.options = "-c ~/.config/redshift.conf"
+-- -- 1 for dim, 0 for not dimmed
+redshift.init(1)
+
 -- Load Debian menu entries
 require("debian.menu")
 
@@ -240,7 +249,7 @@ globalkeys = awful.util.table.join(
     -- My own custom keybindings
     awful.key({ modkey }, "r",     function () awful.util.spawn_with_shell("dmenu_run -b -fn 'Droid Sans Mono-8' &") end),
     awful.key({ modkey, "Shift" }, "XF86Eject",     function () awful.util.spawn_with_shell("xscreensaver-command --lock") end),
-    
+    awful.key({ modkey }, "`", redshift.toggle),
     -- Keyboard backlight mappings
     awful.key({ }, "XF86MonBrightnessDown",     function () awful.util.spawn_with_shell("xbacklight -dec 5") end),
     awful.key({ }, "XF86MonBrightnessUp",     function () awful.util.spawn_with_shell("xbacklight -inc 5") end),
@@ -482,4 +491,10 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- Autorun stuff
+awful.util.spawn_with_shell("redshift")
+awful.util.spawn_with_shell("nm-applet")
+awful.util.spawn_with_shell("xscreensaver")
+
 -- }}}

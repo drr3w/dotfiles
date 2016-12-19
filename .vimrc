@@ -15,7 +15,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/Syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
@@ -28,10 +27,7 @@ call vundle#end()            " required
 " Statusline  settings
 "----------------------------------------------------------------------------------------------------------------------
 
-set statusline=[%f]                               " filename
-set statusline+=%#todo#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*                                " switch back to normal statusline highlight
+set statusline=[%F]                               " filename
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -42,19 +38,6 @@ let g:tagbar_sort       = 0     " sort tags by where they appear in teh file
 let g:tagbar_autofocus  = 1     " automatically move cursor into the tagbar when it activates
 let g:tagbar_left       = 1     " tagbar opens on the left
 let g:tagbar_width      = 40    " tagbar is 40 characters wide
-"----------------------------------------------------------------------------------------------------------------------
-" Syntastic settings
-"----------------------------------------------------------------------------------------------------------------------
-"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"Use flake8
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore="E501,E128,E127"'
-
 
 "----------------------------------------------------------------------------------------------------------------------
 " indentLine  settings
@@ -83,7 +66,7 @@ nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
 nmap <silent> <C-I> :IndentLinesToggle<CR>
 " this below remaps code folds to <space>
-nmap <space> za  
+nnoremap <space> za  
 
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
@@ -99,8 +82,8 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme solarized
-set background=dark
+colorscheme codeschool
+"set background=dark
 
 highlight ColorColumn ctermbg=124
 

@@ -30,4 +30,8 @@ set imap_keepalive = 900
 # My custom  settings
 #-------------------------------------------------------
 
+source ~/.mutt/zenburn.colors
+set sleep_time = 0                          # Be fast. Th
+bind pager <up> previous-line               #scroll insid
+bind pager <down> next-line
 

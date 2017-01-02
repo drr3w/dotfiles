@@ -1,0 +1,37 @@
+
+#-------------------------------------------------------
+# Basic settings
+#-------------------------------------------------------
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set folder = "imaps://imap.gmail.com:993"   # Paths starting with '+' expand to this
+set spoolfile = "+INBOX"
+set postponed = "+[GMail]/Drafts"
+
+set imap_user = USER
+set imap_pass = PASSWORD
+set smtp_pass = PASSWORD
+set record = ''                             # set record blank since we're using google smtp and it saves sent mails
+set from= FROM EMAIL
+set smtp_url = 'smtp://etch.himself@smtp.gmail.com:587'
+set realname= NAME
+set imap_check_subscribed=yes
+set hostname = gmail.com
+set mail_check = 120
+set timeout = 300
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set move = no
+set imap_keepalive = 900
+
+#-------------------------------------------------------
+# My custom  settings
+#-------------------------------------------------------
+
+source ~/.mutt/zenburn.colors
+set sleep_time = 0                          # Be fast. Th
+bind pager <up> previous-line               #scroll insid
+bind pager <down> next-line
+

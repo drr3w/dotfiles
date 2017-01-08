@@ -2,9 +2,7 @@ Config { font = "xft:Open Sans:size=8"
 , bgColor = "#1E2320"
 , fgColor = "grey"
 , position = BottomW L 100
-, commands = [ Run Weather "LFSR" ["-t","<station>: <tempF>F","-L","50","-H","70","--normal","green","--high","red","--low","lightblue"] 36000
-             , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
-             , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
+, commands = [ Run Weather "KSJC" ["-t","<station>: <tempF>F","-L","50","-H","70","--normal","green","--high","red","--low","lightblue"] 36000
              , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
              , Run Memory ["-t","Mem: <usedratio>%"] 10
              , Run Swap [ ] 10
@@ -12,5 +10,5 @@ Config { font = "xft:Open Sans:size=8"
              ]
 , sepChar = "%"
 , alignSep = "}{"
-, template = "%cpu% | %memory% * %swap% | %eth0% }{ %LFSR% | <fc=#ee9a00>%date%</fc>"
+, template = "%cpu% | %memory% * %swap% |}{ %KSJC%"
 }

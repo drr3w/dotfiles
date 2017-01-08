@@ -82,7 +82,7 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme zenburn
+colorscheme codeschool
 "set background=dark
 
 highlight ColorColumn ctermbg=124
@@ -110,7 +110,7 @@ set nowrap	            " Turn off long line wrapping
 set nowrapscan          " Dont wrap when searching
 set showmode            " Always show which mode we're in
 set number              " show line numbers
-set relativenumber      " use relative line numbers
+"set relativenumber      " use relative line numbers
 set cursorline          " highlight the line the cursor is currently on
 set foldmethod=indent   " code fold based on indentation 
 set wildmode=list:full

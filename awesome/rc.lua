@@ -94,7 +94,7 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { "term", "www", 3,4,5,6,7,8,9 }
+    names = { "I", "II", "III", "IV", "V" }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -145,6 +145,7 @@ batterywidgettimer:start()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
+bottomwibox = {}
 mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
@@ -210,14 +211,16 @@ for s = 1, screen.count() do
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
-    -- Create the wibox
+    -- Create the wiboxs
     mywibox[s] = awful.wibox({ position = "top", screen = s })
+    bottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
-    left_layout:add(mylauncher)
+    -- left_layout:add(mylauncher)   -- I don't use a menu
+    -- left_layout:add(mytaglist[s])
+    -- left_layout:add(mypromptbox[s])  -- dmenu is way better than this                  
     left_layout:add(mytaglist[s])
-    left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
@@ -229,10 +232,14 @@ for s = 1, screen.count() do
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
     layout:set_left(left_layout)
-    layout:set_middle(mytasklist[s])
+    -- layout:set_middle(mytasklist[s])
     layout:set_right(right_layout)
 
+    local layout_bottom = wibox.layout.align.horizontal()
+    layout_bottom:set_middle(mytasklist[s])
+
     mywibox[s]:set_widget(layout)
+    bottomwibox[s]:set_widget(layout_bottom)
 end
 -- }}}
 
@@ -496,5 +503,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.util.spawn_with_shell("redshift")
 awful.util.spawn_with_shell("nm-applet")
 awful.util.spawn_with_shell("xscreensaver")
+--awful.util.spawn_with_shell("xmobar")
 
 -- }}}

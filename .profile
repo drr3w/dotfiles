@@ -27,3 +27,5 @@ setxkbmap -option ctrl:nocaps
 # Keep the mouse alive but ignore modifier key combos.
 
 syndaemon -i 1 -d -t -K
+
+export PATH="$HOME/.cargo/bin:$PATH"

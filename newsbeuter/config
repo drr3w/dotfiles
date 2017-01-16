@@ -1,8 +1,9 @@
 # General configuration 
 
-browser "google-chrome %u"    # 'Open in browser' will use the s
-text-width 120
+browser "google-chrome %u"    
+text-width 80
 feed-sort-order unreadarticlecount-asc
+
 # Colors
 
 color background color188 color237

@@ -36,14 +36,15 @@ bind pager <up> previous-line               #scroll insid
 bind pager <down> next-line
 set smart_wrap 
 set sort = threads
-set sort_aux = reverse-last-date-received
 bind editor <space> noop                                                                                             
+set signature = "~/.mutt/signature"
+set sort = reverse-date-received
 macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
-macro pager u "|urlview<enter>" "Call urlview" 
+macro pager u <pipe-entry>"urlview<enter>"  "Use urlview to view links in email"
 
 #-------------------------------------------------------
 # Sidebar stuff

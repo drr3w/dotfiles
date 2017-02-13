@@ -1,19 +1,18 @@
-http://mjtsai.com/blog/feed/
-http://henrikwarne.com/feed/
-http://danluu.com/atom.xml
-http://blog.cryptographyengineering.com/feeds/posts/default
-http://www.zdziarski.com/blog/?feed=rss2
-http://krebsonsecurity.com/feed/
-http://www.imperialviolet.org/iv-rss.xml
-http://bitsplitting.org/feed/
-http://feeds.feedburner.com/codinghorror
-http://googleonlinesecurity.blogspot.com/atom.xml
-http://www.schneier.com/blog/index.rdf
-http://www.electoral-vote.com/index.rss
-http://feeds.feedburner.com/NakedSecurity
-http://threatpost.com/feed
-http://blog.plover.com/index.atom
-https://www.cronweekly.com/feed/
-http://idlewords.com/index.xml
-http://www.jeffgeerling.com/blog.xml
+http://jvns.ca/atom.xml
+https://whatthefuckjusthappenedtoday.com/atom.xml
+http://mjtsai.com/blog/feed/ tech
+http://henrikwarne.com/feed/ tech
+http://danluu.com/atom.xml tech
+http://blog.cryptographyengineering.com/feeds/posts/default security
+http://www.zdziarski.com/blog/?feed=rss2 tech
+http://krebsonsecurity.com/feed/ security
+http://www.imperialviolet.org/iv-rss.xml security
+http://bitsplitting.org/feed/ tech
+http://feeds.feedburner.com/codinghorror tech
+http://googleonlinesecurity.blogspot.com/atom.xml security
+http://www.schneier.com/blog/index.rdf security
+http://www.electoral-vote.com/index.rss 
+http://blog.plover.com/index.atom 
+http://www.idlewords.com/index.xml
+http://www.tbray.org/ongoing/ongoing.atom tech
 http://www.daemonology.net/blog/index.rss

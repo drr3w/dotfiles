@@ -18,16 +18,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'Yggdroot/indentLine'
 Plugin 'ervandew/supertab'
-Plugin 'vimwiki/vimwiki'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
-" Statusline  settings
+" Statusline  setting
 "----------------------------------------------------------------------------------------------------------------------
 
 set statusline=[%F]                               " filename
+set statusline+=%{fugitive#statusline()} 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -36,18 +36,9 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 
 let g:tagbar_sort       = 0     " sort tags by where they appear in teh file
 let g:tagbar_autofocus  = 1     " automatically move cursor into the tagbar when it activates
-let g:tagbar_left       = 1     " tagbar opens on the left
+let g:tagbar_left       = 0     " tagbar opens on the right
 let g:tagbar_width      = 40    " tagbar is 40 characters wide
 
-"----------------------------------------------------------------------------------------------------------------------
-" indentLine  settings
-"----------------------------------------------------------------------------------------------------------------------
-let g:indentLine_color_term = 124
-
-"----------------------------------------------------------------------------------------------------------------------
-" Vimwiki settings
-"----------------------------------------------------------------------------------------------------------------------
-"
 "----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff
 "----------------------------------------------------------------------------------------------------------------------

@@ -29,7 +29,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn pango-8
+bindsym $mod+d exec dmenu_run -b -fn pango-8
 
 # screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
@@ -140,19 +140,21 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-        tray_output primary
-		colors {
+#bar {
+#        status_command i3status
+#        tray_output primary
+#		colors {
 			#color class       border  back.   text
-			focused_workspace  #222200 #222200 #ccbb55
-			active_workspace   #555555 #555555 #ffffff
-			inactive_workspace #000000 #000000 #888888
-			urgent_workspace   #2f343a #900000 #ffffff
-    	}	
-}
+#			focused_workspace  #222200 #222200 #ccbb55
+#			active_workspace   #555555 #555555 #ffffff
+#			inactive_workspace #000000 #000000 #888888
+#			urgent_workspace   #2f343a #900000 #ffffff
+ #   	}	
+#}
 
 #colors:                border  backgr. text    indicator
 client.focused          #000000 #222200 #ccbb55 #2b2b2b
 client.unfocused        #000000 #222200 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
+
+exec polybar main

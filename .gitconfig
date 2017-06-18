@@ -3,5 +3,7 @@
 	name = droo5ki
 [core]
     excludesfile = /Users/etch/.gitignore_global
+[status]
+    showuntrackedfiles = no
 
 

@@ -5,6 +5,6 @@
 #------------------------------------------------------------------------------
 #image/*; /usr/bin/feh '%s'; test=test -n "$DISPLAY"
 image/*; /usr/bin/feh '%s'
-
+text/html; lynx -dump -width=78 -nolist %s; copiousoutput; needsterminal; nametemplate=%s.html
 
 

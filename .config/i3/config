@@ -2,7 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -140,21 +140,29 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#        tray_output primary
-#		colors {
+bar {
+        position top
+        status_command i3status
+        tray_output primary
+		colors {
 			#color class       border  back.   text
-#			focused_workspace  #222200 #222200 #ccbb55
-#			active_workspace   #555555 #555555 #ffffff
-#			inactive_workspace #000000 #000000 #888888
-#			urgent_workspace   #2f343a #900000 #ffffff
- #   	}	
-#}
+			focused_workspace  #222200 #222200 #ccbb55
+		    active_workspace   #555555 #555555 #ffffff
+			inactive_workspace #000000 #000000 #888888
+			urgent_workspace   #2f343a #900000 #ffffff
+    	}	
+}
 
 #colors:                border  backgr. text    indicator
 client.focused          #000000 #222200 #ccbb55 #2b2b2b
 client.unfocused        #000000 #222200 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 
+<<<<<<< Updated upstream
 exec polybar main
+=======
+#exec polybar main
+exec compton 
+exec sh ./.fehbg 
+exec redshift
+>>>>>>> Stashed changes

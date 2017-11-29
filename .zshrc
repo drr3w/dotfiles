@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/bin/go:$PATH
+export PATH=/usr/local/go/bin:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 
@@ -48,5 +48,5 @@ export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 # Go specifics
 #-------------------------------------------------------------------------------
 
-export GOPATH=$HOME/Code/go
-export GOBIN=$HOME/Code/go/bin
+#export GOPATH=$HOME/Code/go
+#export GOBIN=$HOME/Code/go/bin

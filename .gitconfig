@@ -9,3 +9,5 @@
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [log]
     date=relative
+[difftool]
+	vimdiff = true

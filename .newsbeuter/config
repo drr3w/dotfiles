@@ -4,6 +4,17 @@ browser "google-chrome %u"
 text-width 80
 feed-sort-order unreadarticlecount-asc
 
+# the oldreader settings
+#urls-source "oldreader"
+#oldreader-login "etch.himself@gmail.com"
+#oldreader-passwordfile ".oldreader.pwd"
+
+# ttrss
+urls-source "ttrss"
+ttrss-url "http://droo5ki.dnsdojo.org:2008"
+ttrss-login "etch"
+ttrss-passwordfile ".ttrss.pwd"
+
 # Colors
 
 color background color188 color237

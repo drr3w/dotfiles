@@ -1,6 +1,6 @@
 [user]
-	email = etch.himself@gmail.com
-	name = droo5ki
+	email = drew@moj.io
+	name = drr3w
 [core]
     excludesfile = /Users/etch/.gitignore_global
 [status]
@@ -9,3 +9,5 @@
     pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 [log]
     date=relative
+[diff]
+	tool = vimdiff

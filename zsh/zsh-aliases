@@ -2,3 +2,4 @@
 alias ls='ls -G'    # os x version
 alias vi='nvim'
 alias grep='grep -i --color=auto'
+alias gd='git diff --word-diff'

@@ -1,5 +1,5 @@
 [user]
-	email = drew@moj.io
+	email = drew@moj.io 
 	name = drr3w
 [core]
     excludesfile = /Users/etch/.gitignore_global

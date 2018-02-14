@@ -20,6 +20,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------

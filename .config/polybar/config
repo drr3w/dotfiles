@@ -49,11 +49,12 @@ font-1 = unifont:fontformat=truetype:size=6:heavy;-2
 font-2 = siji:pixelsize=10
 font-3 = FontAwesome:size=10;0
 
-modules-left = i3 xwindow 
-modules-center = 
-modules-right = brightness wlan battery date
 
-tray-position = center
+modules-left = i3  
+modules-center = xwindow
+modules-right = brightness date
+
+tray-position = right
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff

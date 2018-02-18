@@ -16,7 +16,7 @@ ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git python tmux)
+plugins=(git python tmux go)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/bin/go:$PATH
+export PATH=/usr/local/go/bin:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 

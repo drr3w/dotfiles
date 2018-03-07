@@ -44,6 +44,8 @@ bind pager <down> next-line
 set smart_wrap
 set sort = threads
 set sort_aux = reverse-last-date-received
+set date_format="%a %b %e %k:%M"
+set index_format="%2C | %Z | %D %-30.30F (%-4.4c) %s"
 bind editor <space> noop
 macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"

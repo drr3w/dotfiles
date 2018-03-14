@@ -61,7 +61,6 @@ modules-right = gmail info-hackspeed eth date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
 tray-background = #cc222222
 
 ;wm-restack = bspwm

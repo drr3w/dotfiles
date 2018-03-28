@@ -50,6 +50,7 @@ font-1 = unifont:fontformat=truetype:size=6:heavy;-2
 font-2 = siji:pixelsize=8
 font-3 = FontAwesome:size=8;0
 
+
 modules-left = i3  
 modules-center = xwindow
 modules-right = info-redshift-temp  gmail brightness volume wlan battery date

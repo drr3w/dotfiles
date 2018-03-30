@@ -29,6 +29,8 @@ call vundle#end()            " required
 abbr teh the
 abbr het the  
 abbr hte the
+abbr emmg etch.himself@gmail.com
+
 iab <expr> ddate strftime("[%a, %b %d]")
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting

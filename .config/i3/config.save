@@ -1,16 +1,8 @@
-set $mod Mod1
+mod Mod1
 
-# required for gaps to work properly
-for_window [class="^.*"] border pixel 0
-
-gaps inner 10
-gaps outer 5
-
-# window focus shouldnt follow the mouse
-focus_follows_mouse no
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -33,28 +25,25 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run -b -fn pango-12
-#bindsym $mod+d exec dmenu_run -b -fn Inconsolata-12
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+d exec dmenu_run -b -fn pango-12
+
 # screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
-# # volume control
+# volume control
 bindsym XF86AudioMute exec amixer set 'Master' 0%
 bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+
 
 # screenlock
-#bindsym $mod+l exec i3lock -c 000000
-bindsym $mod+l exec xscreensaver-command -lock
+bindsym $mod+l exec i3lock -c 000000
 
 # change focus
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+Left move left
@@ -150,7 +139,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #bar {
 #        status_command i3status
-#        position top
 #        tray_output primary
 #		colors {
 			#color class       border  back.   text
@@ -158,7 +146,7 @@ bindsym $mod+r mode "resize"
 #			active_workspace   #555555 #555555 #ffffff
 #			inactive_workspace #000000 #000000 #888888
 #			urgent_workspace   #2f343a #900000 #ffffff
-#    	}	
+ #   	}	
 #}
 
 #colors:                border  backgr. text    indicator
@@ -167,7 +155,6 @@ client.unfocused        #000000 #222200 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 
 exec polybar main
-exec xscreensaver &
 exec compton 
-exec sh ./.fehbg
+exec sh ./fehbg
 exec redshift

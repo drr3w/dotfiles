@@ -4,9 +4,9 @@
 [core]
     excludesfile = /Users/etch/.gitignore_global
 [status]
-    showuntrackedfiles = no
+	showUntrackedFiles = no
 [format]
-    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+    pretty = format:"%C(#dda790)%h %C(#bcdbff)%d%>(12)%ad %C(#8bb664)%d%<(7)%aN%C(#3c98d9)%d %Creset%s"
 [log]
     date=relative
 [push]

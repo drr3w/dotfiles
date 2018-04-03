@@ -59,9 +59,9 @@ modules-left = i3
 modules-center = xwindow
 modules-right = gmail info-hackspeed eth date
 
-tray-position = right
-tray-padding = 2
-tray-background = #cc222222
+;tray-position = right
+;tray-padding = 2
+;tray-background = #cc222222
 
 ;wm-restack = bspwm
 ;wm-restack = i3

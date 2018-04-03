@@ -11,3 +11,5 @@
     date=relative
 [difftool]
     prompt = false 
+[push]
+	default = simple

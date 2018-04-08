@@ -8,13 +8,22 @@
 ;=====================================================
 
 [colors]
-background = #bb000000
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #55
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #88000000
+; background-alt = #444
+; foreground = #dfdfdf
+; foreground-alt = #55
+; primary = #ffb52a
+; secondary = #e60053
+; alert = #bd2c40
+
+;background = #559A8C84
+background-alt = #4e4e4e
+foreground = #efefef
+foreground-alt = #4e4e4e
+primary = #1f222d
+secondary = #FF6200
+alert = #fb4934
+linecolor = #fba922
 
 [global/wm]
 margin-top = 5
@@ -55,10 +64,10 @@ modules-left = i3
 modules-center = xwindow
 modules-right = info-redshift-temp  gmail brightness volume wlan battery date
 
-;tray-position = right
-;tray-padding = 2
+; tray-position = right
+; tray-padding = 2
 ;tray-transparent = true
-;tray-background = #0063ff
+; tray-background = #bb000000
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -339,7 +348,8 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+;ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = #dfdfdf
 
 bar-capacity-width = 15
 
@@ -348,7 +358,8 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground-alt}
+;animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = #dfdfdf
 
 [module/temperature]
 type = internal/temperature

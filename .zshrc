@@ -8,16 +8,11 @@
 #-------------------------------------------------------------------------------
 
 ZSH=$HOME/.oh-my-zsh
-
 ZSH_THEME="simple"
 # DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
-# Uncomment to change how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=30
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git python tmux go)
-
 source $ZSH/oh-my-zsh.sh
 
 #-------------------------------------------------------------------------------
@@ -50,3 +45,13 @@ export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 
 export GOPATH=$HOME/Code/go
 export GOBIN=$HOME/Code/go/bin
+
+#-------------------------------------------------------------------------------
+# User functions
+#-------------------------------------------------------------------------------
+
+function spectrum_ls() {
+   for code in {000..255}; do
+       print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
+   done
+}

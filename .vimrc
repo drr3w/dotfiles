@@ -30,7 +30,10 @@ abbr teh the
 abbr het the  
 abbr hte the
 abbr emmg etch.himself@gmail.com
-
+abbr sig- --drew <cr>
+\<cr>anddrew hersh
+\<cr>site reliability engineering team
+\<cr>c: +1-510-676-4745 \| e: drew@moj.io \| w: www.moj.io
 iab <expr> ddate strftime("[%a, %b %d]")
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting

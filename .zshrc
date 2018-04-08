@@ -10,13 +10,13 @@
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="simple"
-# DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
-# Uncomment to change how often before auto-updates occur? (in days)
+DISABLE_AUTO_UPDATE="false"
+ENABLE_CORRECTION="false"
+
+# how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=30
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git python tmux go)
+plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 

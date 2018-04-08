@@ -20,10 +20,19 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
+"----------------------------------------------------------------------------------------------------------------------
+" Abbreviations 
+"----------------------------------------------------------------------------------------------------------------------
+abbr teh the
+abbr het the  
+abbr hte the
+abbr emmg etch.himself@gmail.com
+
+iab <expr> ddate strftime("[%a, %b %d]")
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
 "----------------------------------------------------------------------------------------------------------------------

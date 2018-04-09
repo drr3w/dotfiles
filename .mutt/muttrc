@@ -42,8 +42,9 @@ set sleep_time = 0                          # Be fast. That's it.
 bind pager <up> previous-line               # scroll inside the message rather than the index
 bind pager <down> next-line
 set smart_wrap
-set sort = threads
-set sort_aux = reverse-last-date-received
+set sort=threads                                                                                                             
+set sort_browser=reverse-date
+set sort_aux=reverse-date-received
 set date_format="%a %b %e %k:%M"
 set index_format="%2C | %Z | %D %-30.30F (%-4.4c) %s"
 bind editor <space> noop

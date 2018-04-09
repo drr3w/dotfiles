@@ -70,12 +70,30 @@ bind pager j next-line
 #--------------------------------------------------------------------
 set sidebar_visible = no
 set sidebar_width = 30
-macro index,pager \cb "<enter-command>toggle sidebar_visible<enter>"
-bind index,pager \cn sidebar-next
-bind index,pager \cp sidebar-prev
-bind index,pager \co sidebar-open
+# macro index,pager \cb "<enter-command>toggle sidebar_visible<enter>"
+# bind index,pager \cn sidebar-next
+# bind index,pager \cp sidebar-prev
+# bind index,pager \co sidebar-open
 mailboxes +INBOX +[Gmail]/"All Mail" +[Gmail]/Drafts +[Gmail]/"Sent Mail" +[Gmail]/Starred  +[Gmail]/Important +[Gmail]/Spam +[Gmail]/Trash
+# set up the sidebar, default not visible
+set sidebar_delim='|'
+set sidebar_sort=no
+set sidebar_shortpath=yes		# abbreviate folder names
 
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+macro index B '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager B '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+macro index \cB '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager \cB '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+# From http://upsilon.cc/~zack/blog/posts/2008/01/mutt_patched_key_bindings/
+# color of folders with new mail
+color sidebar_new yellow default
 #--------------------------------------------------------------------
 # google contacts
 #--------------------------------------------------------------------

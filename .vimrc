@@ -16,12 +16,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'PProvost/vim-ps1'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -83,6 +83,10 @@ augroup vimrc_autocmds
   autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
   autocmd BufEnter *.py match OverLength /\%120v.*/
 augroup END
+
+" This automatically removes trailing whitespace when a file is saved.
+" Currently it'll only work on files with a .py extension
+autocmd BufWritePre *.py %s/\s\+$//e
 
 "----------------------------------------------------------------------------------------------------------------------
 " Settings

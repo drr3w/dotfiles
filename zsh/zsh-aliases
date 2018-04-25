@@ -1,3 +1,4 @@
 alias ls='ls --color=auto' # linux version
 #alias ls='ls -G'    # os x version
 alias vi='vim'
+alias wt='gca -m "updates";git push'

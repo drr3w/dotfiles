@@ -12,7 +12,8 @@ background = #77000000
 background-alt = #cc444444
 foreground = #dfdfdf
 foreground-alt = #55
-primary = #ffb52a
+#primary = #ffb52a
+primary = #e06c75
 secondary = #e60053
 alert = #bd2c40
 
@@ -55,7 +56,7 @@ font-3 = FontAwesome:size=10;0
 ;
 ;=====================================================
 
-modules-left = i3
+modules-left = bspwm
 modules-center = xwindow
 modules-right = gmail info-hackspeed eth date
 

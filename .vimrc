@@ -21,11 +21,16 @@ Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'fatih/vim-go'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
 "----------------------------------------------------------------------------------------------------------------------
+
 abbr teh the
 abbr het the  
 abbr hte the
@@ -35,6 +40,14 @@ abbr sig- --drew <cr>
 \<cr>site reliability engineering team
 \<cr>c: +1-510-676-4745 \| e: drew@moj.io \| w: www.moj.io
 iab <expr> ddate strftime("[%a, %b %d]")
+
+
+"----------------------------------------------------------------------------------------------------------------------
+" Airline settings 
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:airline_theme='zenburn'
+
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
 "----------------------------------------------------------------------------------------------------------------------
@@ -51,6 +64,12 @@ let g:tagbar_sort       = 0     " sort tags by where they appear in teh file
 let g:tagbar_autofocus  = 1     " automatically move cursor into the tagbar when it activates
 let g:tagbar_left       = 0     " tagbar opens on the right
 let g:tagbar_width      = 40    " tagbar is 40 characters wide
+
+"----------------------------------------------------------------------------------------------------------------------
+" NERDTree settings
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:NERDTreeWinSize   = 60
 
 "----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff

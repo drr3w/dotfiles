@@ -16,6 +16,7 @@ Green="${TC}32m";
 for dir in `ls`; do
     if [ -d $dir ]; then
         cd $dir
+        git checkout master
         if [ -d ".git" ]; then
             echo -e "${Bold}${Purple}$dir:${Rst}"
             git pull

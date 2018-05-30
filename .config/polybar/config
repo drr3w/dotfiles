@@ -43,7 +43,7 @@ foreground = ${colors.foreground}
 overline-size = 2
 overline-color = #f00
 underline-size = 2
-underline-color = #00f
+underline-color = #E06C75
 
 border-bottom-size = 2
 ;border-bottom-color = #333
@@ -60,14 +60,14 @@ font-2 = siji:pixelsize=8
 font-3 = FontAwesome:size=8;0
 
 
-modules-left = i3  
+modules-left = i3
 modules-center = xwindow
 modules-right = info-redshift-temp  gmail brightness volume wlan battery date
 
-; tray-position = right
+tray-position = right
 ; tray-padding = 2
 ;tray-transparent = true
-; tray-background = #bb000000
+tray-background = #554d48
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -165,7 +165,8 @@ label-mode-background = ${colors.primary}
 
 label-focused = %index%
 label-focused-background = ${module/bspwm.label-focused-background}
-;label-focused-underline = ${module/bspwm.label-focused-underline}
+#label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-underline = #E06C75
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 label-unfocused = %index%

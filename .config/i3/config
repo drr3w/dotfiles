@@ -1,7 +1,7 @@
 set $mod Mod1
 
 # required for gaps to work properly
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 gaps inner 10
 gaps outer 5
@@ -47,14 +47,14 @@ bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+
 
 # screenlock
-#bindsym $mod+l exec i3lock -c 000000
-bindsym $mod+l exec xscreensaver-command -lock
+bindsym $mod+l exec ~/.dotfiles/bin/blurlock/blurlock.sh
+#bindsym $mod+l exec xscreensaver-command -lock
 
 # change focus
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym Control+Left focus left
+bindsym Control+Down focus down
+bindsym Control+Up focus up
+bindsym Control+Right focus right
 
 # move focused window
 bindsym $mod+Shift+Left move left
@@ -162,12 +162,11 @@ bindsym $mod+r mode "resize"
 #}
 
 #colors:                border  backgr. text    indicator
-client.focused          #000000 #222200 #ccbb55 #2b2b2b
-client.unfocused        #000000 #222200 #555511 #2b2b2b
+client.focused          #E06C75 #E06C75 #ccbb55 #2b2b2b
+client.unfocused        #000000 #000000 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 
 exec polybar main
-exec xscreensaver &
 exec compton 
-exec sh ./.fehbg
+exec sh ~/.fehbg
 exec redshift

@@ -26,6 +26,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/go/bin:$PATH
 
+# let fzf see hidden files by setting a default command that lists them
+export FZF_DEFAULT_COMMAND='find .'
+
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 
 

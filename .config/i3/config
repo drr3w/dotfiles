@@ -3,8 +3,8 @@ set $mod Mod1
 # required for gaps to work properly
 for_window [class="^.*"] border pixel 2
 
-gaps inner 10
-gaps outer 5
+# gaps inner 10
+# gaps outer 5
 
 # window focus shouldnt follow the mouse
 focus_follows_mouse no
@@ -153,7 +153,7 @@ bindsym $mod+r mode "resize"
 #        position top
 #        tray_output primary
 #		colors {
-			#color class       border  back.   text
+#			#color class       border  back.   text
 #			focused_workspace  #222200 #222200 #ccbb55
 #			active_workspace   #555555 #555555 #ffffff
 #			inactive_workspace #000000 #000000 #888888

@@ -22,10 +22,3 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # remap caps lock to control
 setxkbmap -option ctrl:nocaps
 
-# set syndaemon to start as a background daemon, wait for 
-# 1 second after the last keypress to re-enable the touchpad.
-# Keep the mouse alive but ignore modifier key combos.
-
-syndaemon -i 1 -d -t -K
-
-export PATH="$HOME/.cargo/bin:$PATH"

@@ -16,15 +16,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
-Plugin 'fatih/vim-go'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
+Plugin 'townk/vim-autoclose'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -53,7 +48,7 @@ let g:airline_theme='zenburn'
 "----------------------------------------------------------------------------------------------------------------------
 
 set statusline=[%F]                               " filename
-set statusline+=%{fugitive#statusline()} 
+" set statusline+=%{fugitive#statusline()} 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -109,8 +104,8 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme codeschool
-"set background=dark
+colorscheme gruvbox
+set background=dark
 
 highlight ColorColumn ctermbg=124
 

@@ -162,7 +162,7 @@ bindsym $mod+r mode "resize"
 #}
 
 #colors:                border  backgr. text    indicator
-client.focused          #E06C75 #E06C75 #ccbb55 #2b2b2b
+client.focused          #689d6a #689d6a #ccbb55 #2b2b2b
 client.unfocused        #000000 #000000 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 

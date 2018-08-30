@@ -72,7 +72,7 @@ rofi.theme: ~/.config/rofi/themes/term-dark.theme
 rofi.show-icons: false
 
 ! Font for rofi to use
-rofi.font: InputMonoCondensed 10
+rofi.font: Iosevka Term 10
 
 ! All colors are either hex #rrggbb, #aarrggbb or argb:aarrggbbvalues or X11 color names.
 
@@ -402,3 +402,4 @@ rofi.kb-custom-18: Alt+asterisk
 rofi.kb-custom-19: Alt+parenleft
 
 ! vim: ft=xdefaults cms=!\ %s
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark-mod.rasi

@@ -1,6 +1,7 @@
 [user]
 	email = drew@moj.io 
 	name = drr3w
+	signingkey = 81BB4EAF420B596B
 [core]
     excludesfile = /Users/etch/.gitignore_global
 [status]

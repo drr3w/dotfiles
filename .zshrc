@@ -12,7 +12,7 @@ ZSH_THEME="simple"
 # DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
-plugins=(git python tmux go)
+plugins=(git python tmux go jira)
 source $ZSH/oh-my-zsh.sh
 
 #-------------------------------------------------------------------------------
@@ -38,6 +38,9 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[48;5;88m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
+
+# JIRA config
+export JIRA_URL='jira.moj.io'
 
 #-------------------------------------------------------------------------------
 # Go specifics

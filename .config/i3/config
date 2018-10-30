@@ -3,8 +3,8 @@ set $mod Mod1
 # required for gaps to work properly
 for_window [class="^.*"] border pixel 2
 
-# gaps inner 10
-# gaps outer 5
+gaps inner 10
+gaps outer 5
 
 # window focus shouldnt follow the mouse
 focus_follows_mouse no
@@ -33,10 +33,9 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run -b -fn pango-12
-#bindsym $mod+d exec dmenu_run -b -fn Inconsolata-12
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Tab exec rofi -show window
+#bindsym $mod+d exec dmenu_run -b -fn pango-12
+ bindsym $mod+d exec rofi -show run
+ bindsym $mod+Tab exec rofi -show window
 # screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -148,25 +147,25 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#        position top
-#        tray_output primary
-#		colors {
-#			#color class       border  back.   text
-#			focused_workspace  #222200 #222200 #ccbb55
-#			active_workspace   #555555 #555555 #ffffff
-#			inactive_workspace #000000 #000000 #888888
-#			urgent_workspace   #2f343a #900000 #ffffff
-#    	}	
-#}
+bar {
+        status_command i3status
+        position top
+        tray_output primary
+		colors {
+			#color class       border  back.   text
+			focused_workspace  #222200 #222200 #ccbb55
+			active_workspace   #555555 #555555 #ffffff
+			inactive_workspace #000000 #000000 #888888
+			urgent_workspace   #2f343a #900000 #ffffff
+    	}	
+}
 
 #colors:                border  backgr. text    indicator
 client.focused          #689d6a #689d6a #ccbb55 #2b2b2b
 client.unfocused        #000000 #000000 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 
-exec polybar main
+#exec polybar main
 exec compton 
 exec sh ~/.fehbg
 exec redshift

@@ -20,6 +20,8 @@ Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'
 Plugin 'morhetz/gruvbox'
 Plugin 'townk/vim-autoclose'
+Plugin 'junegunn/Goyo.vim'
+Plugin 'junegunn/Limelight.vim'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -67,6 +69,12 @@ let g:tagbar_width      = 40    " tagbar is 40 characters wide
 let g:NERDTreeWinSize   = 60
 
 "----------------------------------------------------------------------------------------------------------------------
+" Goyo settings
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:goyo_width=130
+
+"----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff
 "----------------------------------------------------------------------------------------------------------------------
 
@@ -104,8 +112,8 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme gruvbox
-set background=dark
+colorscheme codeschool
+"set background=dark
 
 highlight ColorColumn ctermbg=124
 

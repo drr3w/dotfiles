@@ -16,10 +16,18 @@ plugins=(git python tmux go jira)
 source $ZSH/oh-my-zsh.sh
 
 #-------------------------------------------------------------------------------
+# Go specifics
+#-------------------------------------------------------------------------------
+
+export GOPATH=$HOME/Code/go
+export GOBIN=$HOME/Code/go/bin
+
+#-------------------------------------------------------------------------------
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/go/bin:$PATH
+#export PATH=/usr/local/go/bin:$PATH
+export PATH=$GOPATH:$GOBIN:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 
@@ -40,14 +48,8 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 
 # JIRA config
-export JIRA_URL='jira.moj.io'
+export JIRA_URL='https://jira.moj.io'
 
-#-------------------------------------------------------------------------------
-# Go specifics
-#-------------------------------------------------------------------------------
-
-export GOPATH=$HOME/Code/go
-export GOBIN=$HOME/Code/go/bin
 
 #-------------------------------------------------------------------------------
 # User functions

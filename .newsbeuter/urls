@@ -1,25 +1,33 @@
-http://mjtsai.com/blog/feed/
-http://henrikwarne.com/feed/
-http://danluu.com/atom.xml
-http://blog.cryptographyengineering.com/feeds/posts/default
-http://www.zdziarski.com/blog/?feed=rss2
-http://krebsonsecurity.com/feed/
-http://www.imperialviolet.org/iv-rss.xml
-http://bitsplitting.org/feed/
-http://feeds.feedburner.com/codinghorror
-http://googleonlinesecurity.blogspot.com/atom.xml
-http://www.schneier.com/blog/index.rdf
-http://threatpost.com/feed
-http://blog.plover.com/index.atom
-https://www.cronweekly.com/feed/
-http://idlewords.com/index.xml
-http://jvns.ca/atom.xml
-https://whatthefuckjusthappenedtoday.com/atom.xml
-http://blog.plover.com/index.atom 
-http://www.idlewords.com/index.xml
-http://www.tbray.org/ongoing/ongoing.atom tech
-http://www.daemonology.net/blog/index.rss
-https://blog.jessfraz.com/index.xml
-https://www.jwz.org/blog/feed/
-http://antirez.com/rss
-https://blog.acolyer.org/feed/
+http://blogs.msdn.com/b/azureservicefabric/rss.aspx microsoft
+https://azure.microsoft.com/en-us/blog/feed/ microsoft
+http://espnfc.com/blog/rss/_/name/arsenal arsenal
+http://arseblog.com/feed/ arsenal
+http://erratasec.blogspot.com/feeds/posts/default blogs
+http://jvns.ca/atom.xml blogs
+http://henrikwarne.com/feed/ blogs
+https://rachelbythebay.com/w/atom.xml "~rachelbythebay" blogs
+http://wilwheaton.net/feed/ blogs
+http://www.murrayc.com/feed/ blogs
+https://drewdevault.com/feed.xml blogs
+http://scottaaronson.com/blog/?feed=rss2 blogs
+http://www.fireeye.com/blog/feed infosec
+http://computer-forensics.sans.org/blog/feed/ infosec
+http://feeds.trendmicro.com/Anti-MalwareBlog/ infosec
+http://blog.eset.com/feed infosec
+https://www.cyberscoop.com/feed/ infosec
+http://mjtsai.com/blog/feed/ blogs
+http://henrikwarne.com/feed/ blogs
+http://danluu.com/atom.xml blogs
+http://blog.cryptographyengineering.com/feeds/posts/default infosec
+http://www.zdziarski.com/blog/?feed=rss2 blogs
+http://krebsonsecurity.com/feed/ infosec
+http://www.imperialviolet.org/iv-rss.xml blogs
+http://bitsplitting.org/feed/ blogs
+http://feeds.feedburner.com/codinghorror blogs
+http://threatpost.com/feed infosec
+http://blog.plover.com/index.atom blogs
+https://www.cronweekly.com/feed/ 
+https://whatthefuckjusthappenedtoday.com/atom.xml 
+http://www.daemonology.net/blog/index.rss blogs
+https://blog.jessfraz.com/index.xml blogs
+https://blog.acolyer.org/feed/ blogs 

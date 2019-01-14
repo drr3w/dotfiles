@@ -27,7 +27,7 @@ export GOBIN=$HOME/Code/go/bin
 #-------------------------------------------------------------------------------
 
 #export PATH=/usr/local/go/bin:$PATH
-export PATH=$GOPATH:$GOBIN:$PATH
+export PATH='/home/etch/.local/bin':$GOPATH:$GOBIN:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 

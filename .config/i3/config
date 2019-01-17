@@ -51,8 +51,8 @@ bindsym $mod+d exec dmenu_run -b -fn 'Iosevka Term SS03'
 # bindsym $mod+d exec rofi -show run
 # bindsym $mod+Tab exec rofi -show window
 # screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 # # volume control
 bindsym XF86AudioMute exec amixer set 'Master' 0%

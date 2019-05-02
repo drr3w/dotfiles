@@ -18,10 +18,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'
-Plugin 'morhetz/gruvbox'
 Plugin 'townk/vim-autoclose'
-Plugin 'junegunn/Goyo.vim'
-Plugin 'junegunn/Limelight.vim'
+Plugin 'fatih/vim-go'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -32,18 +30,8 @@ abbr teh the
 abbr het the  
 abbr hte the
 abbr emmg etch.himself@gmail.com
-abbr sig- --drew <cr>
-\<cr>anddrew hersh
-\<cr>site reliability engineering team
-\<cr>c: +1-510-676-4745 \| e: drew@moj.io \| w: www.moj.io
 iab <expr> ddate strftime("[%a, %b %d]")
 
-
-"----------------------------------------------------------------------------------------------------------------------
-" Airline settings 
-"----------------------------------------------------------------------------------------------------------------------
-
-let g:airline_theme='zenburn'
 
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
@@ -69,12 +57,6 @@ let g:tagbar_width      = 40    " tagbar is 40 characters wide
 let g:NERDTreeWinSize   = 60
 
 "----------------------------------------------------------------------------------------------------------------------
-" Goyo settings
-"----------------------------------------------------------------------------------------------------------------------
-
-let g:goyo_width=130
-
-"----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff
 "----------------------------------------------------------------------------------------------------------------------
 
@@ -83,7 +65,7 @@ filetype plugin indent on    " required, turns on loading filetype specific plug
 set nocompatible             " make vim less vi-compatible and more useful
 set clipboard=unnamed        " set clipboard to system clipboard
 syntax enable	             " Turn on syntax highlighting
-set bs=eol,start,indent             " controlling how backspace behaves. see :help bs
+set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 
 "----------------------------------------------------------------------------------------------------------------------
 " Some nice keyboard shortcuts
@@ -102,7 +84,7 @@ nnoremap <space> za
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
 
-" PEP-008: This colors lines over 80 characters long, python files only.
+" PEP-008: This colors lines over 120 characters long, python files only.
 augroup vimrc_autocmds
   autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
   autocmd BufEnter *.py match OverLength /\%120v.*/
@@ -119,7 +101,7 @@ highlight ColorColumn ctermbg=124
 
 set fileformat=unix
 
-set showmatch
+set showmatch           " show matching brackets
 set matchtime=3
 
 set tabstop=4           " set tabs to be 4 spaces long

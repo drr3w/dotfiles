@@ -7,13 +7,14 @@ general {
 }
 
 order += "wireless wlp58s0"
-order += "cpu_temperature 0"
+# order += "cpu_temperature 0"
 order += "volume master"
 order += "battery 0"
 order += "tztime local"
 
 wireless wlp58s0 {
-  format_up = " WiFi  [%quality |%essid | %ip] "
+  #format_up = " WiFi  [%quality | %essid | %ip] "
+  format_up = "(%quality at %essid, %bitrate / %frequency) %ip"
   format_down = " WiFi  [disconnected] "
 }
 
@@ -34,7 +35,8 @@ volume master {
 }
 
 battery 0 {
-  format = " %status [%percentage %remaining] "
+  # format = " %status [%percentage %remaining] "
+  format = " %status [%percentage] "
   status_chr = "⚇ CHR"
   status_bat = "⚡ BAT"
   status_full = "☻ FULL"

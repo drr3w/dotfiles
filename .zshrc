@@ -16,7 +16,9 @@ ENABLE_CORRECTION="false"
 # how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=30
 
-plugins=(git python tmux)
+plugins=(git python tmux jira nvm) 
+export JIRA_URL="https://1mojio.atlassian.net"
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/go/bin:$PATH
+export PATH=/usr/local/share/dotnet:/usr/local/go/bin:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 

@@ -81,6 +81,8 @@ nnoremap <space> za
 augroup vimrc_autocmds
   autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
   autocmd BufEnter *.py match OverLength /\%120v.*/
+  autocmd BufEnter *.sh highlight ShellOverLength ctermbg=124 ctermfg=266 guibg=#111111
+  autocmd BufEnter *.sh match ShellOverLength /\%80v.*/ " google style guide recommendation for shell scripts
 augroup END
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -88,11 +90,11 @@ augroup END
 "----------------------------------------------------------------------------------------------------------------------
 
 colorscheme codeschool
-"set background=dark
+" set background=dark use this with solarized
 
 highlight ColorColumn ctermbg=124
 
-set fileformat=unix
+"set fileformat=unix
 
 set showmatch
 set matchtime=3

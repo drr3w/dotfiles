@@ -20,13 +20,12 @@ source $ZSH/oh-my-zsh.sh
 #-------------------------------------------------------------------------------
 
 export GOPATH=$HOME/Code/go
-export GOBIN=$HOME/Code/go/bin
 
 #-------------------------------------------------------------------------------
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH='/home/etch/.local/bin':$GOPATH:$GOBIN:$PATH
+export PATH='/home/etch/.local/bin':$GOPATH:$PATH:'/usr/local/go/bin'
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 

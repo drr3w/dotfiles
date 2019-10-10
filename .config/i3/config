@@ -4,11 +4,11 @@ set $mod Mod1
 #----------------------------------------------------------------------------------
 # i3 gaps settings
 #----------------------------------------------------------------------------------
-# required for gaps to work properly
-for_window [class="^.*"] border pixel 2
+# Remove window title bars (required for gaps to work properly)
+for_window [class="^.*"] border pixel 1
 
-gaps inner 3
-gaps outer 3
+gaps inner 2
+#gaps outer 2
 
 
 #----------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ gaps outer 3
 focus_follows_mouse no
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:xos4 Terminus 9
+font pango:Terminus 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,8 +47,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -fn "-xos4-terminus-medium-r-*-*-24-*"
-#bindsym $mod+d exec dmenu_run -b -fn 'xos4 Terminus 10'
+bindsym $mod+d exec dmenu_run -b -fn Terminus-12 
 # bindsym $mod+d exec rofi -show run
 # bindsym $mod+Tab exec rofi -show window
 # screen brightness
@@ -165,25 +164,25 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #----------------------------------------------------------------------------------
 
-bar {
-        status_command i3status
-        position top
-        tray_output primary
-		colors {
-			#color class       border  back.   text
-			focused_workspace  #222200 #222200 #ccbb55
-			active_workspace   #555555 #555555 #ffffff
-			inactive_workspace #000000 #000000 #888888
-			urgent_workspace   #2f343a #900000 #ffffff
-    	}	
-}
+#bar {
+#        status_command i3status
+#        position top
+#        tray_output primary
+#		colors {
+#			#color class       border  back.   text
+#			focused_workspace  #222200 #222200 #ccbb55
+#			active_workspace   #555555 #555555 #ffffff
+#			inactive_workspace #000000 #000000 #888888
+#			urgent_workspace   #2f343a #900000 #ffffff
+#    	}	
+#}
 
 #----------------------------------------------------------------------------------
 # Colors               
 #----------------------------------------------------------------------------------
 
                         #border  backgr. text    indicator
-client.focused          #689d6a #689d6a #ccbb55 #2b2b2b
+client.focused          #000000 #000000 #ccbb55 #2b2b2b
 client.unfocused        #000000 #000000 #555511 #2b2b2b
 client.urgent           #900000 #900000 #ffffff #2b2b2b
 
@@ -191,7 +190,7 @@ client.urgent           #900000 #900000 #ffffff #2b2b2b
 # Start-up stuff
 #----------------------------------------------------------------------------------
 
-#exec polybar main
+exec polybar main
 exec compton 
 exec sh ~/.fehbg
 exec redshift

@@ -16,7 +16,7 @@ ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git python)
+plugins=(git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/go/bin:$PATH
+export PATH=/snap/bin:/usr/local/go/bin:$PATH
 
 # let fzf see hidden files by setting a default command that lists them
 export FZF_DEFAULT_COMMAND='find .'
@@ -51,5 +51,5 @@ export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 # Go specifics
 #-------------------------------------------------------------------------------
 
-#export GOPATH=$HOME/Code/go
-#export GOBIN=$HOME/Code/go/bin
+export GOPATH=$HOME/Code/go
+export GOBIN=$HOME/Code/go/bin

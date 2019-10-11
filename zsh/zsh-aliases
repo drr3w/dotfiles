@@ -1,3 +1,4 @@
+alias python='python3'
 alias ls='ls --color=auto' # linux version
 #alias ls='ls -G'    # os x version
 alias vi='vim'

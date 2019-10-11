@@ -16,12 +16,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'nvie/vim-flake8'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'PProvost/vim-ps1'
+Plugin 'morhetz/gruvbox'
+Plugin 'townk/vim-autoclose'
+Plugin 'junegunn/fzf'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -92,8 +93,8 @@ autocmd BufWritePre *.py %s/\s\+$//e
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme codeschool
-"set background=dark
+colorscheme gruvbox
+set background=dark
 
 highlight ColorColumn ctermbg=124
 

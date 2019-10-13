@@ -73,7 +73,7 @@ modules-right = info-redshift-temp  gmail brightness volume wlan battery date
 
 [module/info-redshift-temp]
 type = custom/script
-exec = ~/.config/polybar/redshift/info-redshift-temp.sh
+exec = ~/.config/polybar/info-redshift-temp.sh
 interval = 5 
 click-left = ~/.config/polybar/redshift/notify.sh
 

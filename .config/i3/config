@@ -3,8 +3,8 @@ set $mod Mod1
 # required for gaps to work properly
 for_window [class="^.*"] border pixel 0
 
-#gaps inner 10
-#gaps outer 5
+gaps inner 2 
+gaps outer 2
 
 # window focus shouldnt follow the mouse
 focus_follows_mouse yes

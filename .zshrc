@@ -12,7 +12,7 @@ ZSH_THEME="simple"
 # DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
-plugins=(git python tmux go jira)
+plugins=(git tmux python go jira)
 source $ZSH/oh-my-zsh.sh
 
 #-------------------------------------------------------------------------------

@@ -4,7 +4,6 @@
 	signingkey = 81BB4EAF420B596B
 [core]
     excludesfile = /Users/etch/.gitignore_global
-	autocrlf = true
 [status]
 	showUntrackedFiles = no
 [format]

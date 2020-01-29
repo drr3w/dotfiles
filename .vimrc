@@ -89,7 +89,7 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme codeschool
+colorscheme distinguished
 " set background=dark use this with solarized
 
 highlight ColorColumn ctermbg=124

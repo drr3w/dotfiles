@@ -16,7 +16,7 @@ ENABLE_CORRECTION="false"
 # how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=30
 
-plugins=(git python tmux jira nvm) 
+plugins=(git python tmux jira zsh-autosuggestions) 
 export JIRA_URL="https://1mojio.atlassian.net"
 
 

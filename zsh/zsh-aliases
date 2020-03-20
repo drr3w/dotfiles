@@ -3,5 +3,3 @@ alias ls='ls --color=auto' # linux version
 alias vi='vim'
 alias wt='gca -m updates; git push'
 alias scrot='scrot ~/Pictures/Screenshots/'
-# only required if using oh-my-zsh's git plugin with the grv command line git repo viewer
-unalias grv 

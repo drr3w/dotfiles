@@ -15,6 +15,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'
@@ -36,7 +37,7 @@ abbr teh the
 abbr het the  
 abbr hte the
 abbr emmg etch.himself@gmail.com
-iab <expr> ddate strftime("[%a, %b %d]")
+iab <expr> ddate strftime("## %a, %b %d")
 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -61,6 +62,7 @@ let g:tagbar_width      = 40    " tagbar is 40 characters wide
 "----------------------------------------------------------------------------------------------------------------------
 
 let g:NERDTreeWinSize   = 60
+let NERDTreeMinimalUI = 1
 
 "----------------------------------------------------------------------------------------------------------------------
 " Vim specific stuff

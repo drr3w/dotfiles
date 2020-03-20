@@ -13,15 +13,14 @@ ZSH_THEME="simple"
 ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
 
-source $ZSH/oh-my-zsh.sh
 #-------------------------------------------------------------------------------
 # plugins 
 #-------------------------------------------------------------------------------
-
 # Required for auto suggest
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 plugins=(git tmux python go jira zsh-autosuggestions)
 
+source $ZSH/oh-my-zsh.sh
 #-------------------------------------------------------------------------------
 # Go specifics
 #-------------------------------------------------------------------------------

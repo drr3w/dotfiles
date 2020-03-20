@@ -100,7 +100,7 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 let g:solarized_termcolors=256
-colorscheme codeschool
+colorscheme distinguished
 "set background=dark
 
 highlight ColorColumn ctermbg=124

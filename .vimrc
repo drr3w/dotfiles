@@ -17,9 +17,7 @@ Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-commentary'
-Plugin 'townk/vim-autoclose'
 Plugin 'fatih/vim-go'
 call vundle#end()            " required
 
@@ -79,12 +77,14 @@ set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 " Some nice keyboard shortcuts
 "----------------------------------------------------------------------------------------------------------------------
 
+let mapleader=","
+
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-nmap <silent> <C-I> :IndentLinesToggle<CR>
+nmap <silent> <leader>I :%!python -m json.tool<CR>
 " this below remaps code folds to <space>
 nnoremap <space> za  
 

@@ -9,8 +9,6 @@ filetype off                  " required
 " Vundle plugin manager
 "----------------------------------------------------------------------------------------------------------------------
 
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
@@ -88,8 +86,8 @@ nmap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>  
 nmap <silent> <leader>Gc :Git commit<CR>
 nmap <silent> <leader>Ga :Git add %<CR>
-" this below remaps code folds to <space>
-nnoremap <space> za  
+nmap <silent> <leader>I :%!python -m json.tool<CR>
+
 
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands

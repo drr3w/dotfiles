@@ -6,24 +6,25 @@
 filetype off                  " required
 
 "----------------------------------------------------------------------------------------------------------------------
-" Vundle plugin manager
+" vim-plug  plugin manager
 "----------------------------------------------------------------------------------------------------------------------
 
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
-Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
 Plug 'psf/black'
+Plug 'kien/ctrlp.vim'
 call plug#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
 " Ctrl-P fuzzy path finder 
 "----------------------------------------------------------------------------------------------------------------------
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
@@ -88,6 +89,9 @@ nmap <silent> <leader>Gc :Git commit<CR>
 nmap <silent> <leader>Ga :Git add %<CR>
 nmap <silent> <leader>I :%!python -m json.tool<CR>
 
+"
+nmap <silent> <leader>[ :vertical resize -15<CR>
+nmap <silent> <leader>] :vertical resize +15<CR>
 
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands

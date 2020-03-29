@@ -10,18 +10,16 @@ filetype off                  " required
 "----------------------------------------------------------------------------------------------------------------------
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
-Plugin 'scrooloose/nerdtree'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-commentary'
-Plugin 'townk/vim-autoclose'
-Plugin 'fatih/vim-go'
-call vundle#end()            " required
+"set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/bundle')
+Plug 'scrooloose/nerdtree'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-commentary'
+Plug 'fatih/vim-go'
+Plug 'psf/black'
+call plug#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
 " Ctrl-P fuzzy path finder 
@@ -45,7 +43,7 @@ iab <expr> ddate strftime("## %a, %b %d")
 "----------------------------------------------------------------------------------------------------------------------
 
 set statusline=[%F]                               " filename
-" set statusline+=%{fugitive#statusline()} 
+set statusline+=%{fugitive#statusline()} 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -79,12 +77,17 @@ set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 " Some nice keyboard shortcuts
 "----------------------------------------------------------------------------------------------------------------------
 
+let mapleader=","
+
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-nmap <silent> <C-I> :IndentLinesToggle<CR>
+nmap <silent> <leader>gd :YcmCompleter GoTo<CR>  
+nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>  
+nmap <silent> <leader>Gc :Git commit<CR>
+nmap <silent> <leader>Ga :Git add %<CR>
 " this below remaps code folds to <space>
 nnoremap <space> za  
 

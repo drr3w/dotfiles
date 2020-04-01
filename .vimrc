@@ -15,14 +15,25 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
+Plugin 'ycm-core/youcompleteme'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()            " required
 
+"----------------------------------------------------------------------------------------------------------------------
+" ctrlp settings
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" if executable('grep')
+"   let g:ctrlp_user_command = 'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
+" endif
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
 "----------------------------------------------------------------------------------------------------------------------
@@ -32,6 +43,18 @@ abbr hte the
 abbr emmg etch.himself@gmail.com
 
 iab <expr> ddate strftime("## %a, %b %d")
+"----------------------------------------------------------------------------------------------------------------------
+" Syntastic settings
+"----------------------------------------------------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
 "----------------------------------------------------------------------------------------------------------------------
@@ -63,15 +86,19 @@ set bs=eol,start,indent             " controlling how backspace behaves. see :he
 "----------------------------------------------------------------------------------------------------------------------
 " Some nice keyboard shortcuts
 "----------------------------------------------------------------------------------------------------------------------
-
+let mapleader=","
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-nmap <silent> <C-I> :IndentLinesToggle<CR>
-" this below remaps code folds to <space>
-nnoremap <space> za  
+" nmap <silent> <leader>gd :YcmCompleter GoTo<CR>
+" nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nmap <silent> <leader>Gc :Git commit -v<CR>
+nmap <silent> <leader>Ga :Git add %<CR>
+nmap <silent> <leader>I :%!python -m json.tool<CR>
+nmap <silent> <leader>[ :vertical resize -15<CR>
+nmap <silent> <leader>] :vertical resize +15<CR>
 
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands

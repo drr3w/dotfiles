@@ -21,6 +21,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
 call vundle#end()            " required
 

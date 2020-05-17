@@ -9,6 +9,12 @@ filetype off                  " required
 " vim-plug  plugin manager
 "----------------------------------------------------------------------------------------------------------------------
 
+" Automatically, silently, install vim-plug if we dont have it. 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
@@ -16,7 +22,6 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
-Plug 'psf/black'
 Plug 'kien/ctrlp.vim'
 call plug#end()            " required
 

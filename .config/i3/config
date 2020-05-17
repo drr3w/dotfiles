@@ -1,15 +1,5 @@
 set $mod Mod1
-
-
-#----------------------------------------------------------------------------------
-# i3 gaps settings
-#----------------------------------------------------------------------------------
-# Remove window title bars (required for gaps to work properly)
-#for_window [class="^.*"] border pixel 1
-
-#gaps inner 2
-#gaps outer 2
-
+set $term st
 
 #----------------------------------------------------------------------------------
 # Window settings 
@@ -47,7 +37,7 @@ for_window [class="Calculator"] floating enable
 bindsym $mod+Shift+s sticky toggle
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -65,8 +55,9 @@ bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%-
 bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+
 
 # screenlock
-bindsym $mod+l exec ~/.dotfiles/bin/blurlock/blurlock.sh
+#bindsym $mod+l exec ~/.dotfiles/bin/blurlock/blurlock.sh
 #bindsym $mod+l exec xscreensaver-command -lock
+bindsym $mod+l exec i3lock -c 111111
 
 # change focus
 bindsym Control+Left focus left
@@ -136,7 +127,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -170,7 +161,7 @@ bindsym $mod+r mode "resize"
 #----------------------------------------------------------------------------------
 
 bar {
-        font pango:Terminus 10
+        font pango:Monospace 10
         status_command i3status
         position top
         tray_output primary

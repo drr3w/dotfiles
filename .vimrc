@@ -23,13 +23,27 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()            " required
+
+"----------------------------------------------------------------------------------------------------------------------
+" Syntastic settings
+"----------------------------------------------------------------------------------------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "----------------------------------------------------------------------------------------------------------------------
 " Ctrl-P fuzzy path finder 
 "----------------------------------------------------------------------------------------------------------------------
 
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
@@ -62,7 +76,6 @@ let g:tagbar_width      = 40    " tagbar is 40 characters wide
 "----------------------------------------------------------------------------------------------------------------------
 " NERDTree settings
 "----------------------------------------------------------------------------------------------------------------------
-
 let g:NERDTreeWinSize   = 60
 let NERDTreeMinimalUI = 1
 
@@ -93,8 +106,6 @@ nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nmap <silent> <leader>Gc :Git commit<CR>
 nmap <silent> <leader>Ga :Git add %<CR>
 nmap <silent> <leader>I :%!python -m json.tool<CR>
-
-"
 nmap <silent> <leader>[ :vertical resize -15<CR>
 nmap <silent> <leader>] :vertical resize +15<CR>
 
@@ -115,7 +126,7 @@ let g:solarized_termcolors=256
 colorscheme distinguished
 "set background=dark
 
-highlight ColorColumn ctermbg=124
+highlight ColorColumn ctermbg=235
 
 set fileformat=unix
 
@@ -153,7 +164,7 @@ function! ColorColumnToggle()
     if &cc
         setlocal cc=0
     else
-        setlocal cc=120
+        setlocal cc=80
     endif
 endfunction
 

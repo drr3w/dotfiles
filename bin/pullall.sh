@@ -16,10 +16,13 @@ Green="${TC}32m";
 for dir in `ls`; do
     if [ -d $dir ]; then
         cd $dir
-        git checkout master
         if [ -d ".git" ]; then
+            git stash || exit
+            git checkout master || exit
             echo -e "${Bold}${Purple}$dir:${Rst}"
             git pull
+            git checkout - 
+            git stash pop
         fi
         cd ..
     fi

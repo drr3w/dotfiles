@@ -402,4 +402,3 @@ rofi.kb-custom-18: Alt+asterisk
 rofi.kb-custom-19: Alt+parenleft
 
 ! vim: ft=xdefaults cms=!\ %s
-rofi.theme: /usr/share/rofi/themes/gruvbox-dark-mod.rasi

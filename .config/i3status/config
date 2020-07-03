@@ -6,7 +6,7 @@ general {
     color_bad =      '#a51818'   
 }
 
-order += "wireless wlp58s0"
+# order += "wireless wlp58s0"
 # order += "cpu_temperature 0"
 order += "volume master"
 order += "battery 0"

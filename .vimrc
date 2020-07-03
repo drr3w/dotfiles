@@ -43,7 +43,10 @@ let g:syntastic_check_on_wq = 0
 " Ctrl-P fuzzy path finder 
 "----------------------------------------------------------------------------------------------------------------------
 
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
@@ -63,7 +66,6 @@ iab <expr> ddate strftime("## %a, %b %d")
 set statusline=[%F]                               " filename
 set statusline+=%{fugitive#statusline()} 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
-
 "----------------------------------------------------------------------------------------------------------------------
 " Tagbar settings
 "----------------------------------------------------------------------------------------------------------------------
@@ -108,23 +110,24 @@ nmap <silent> <leader>Ga :Git add %<CR>
 nmap <silent> <leader>I :%!python -m json.tool<CR>
 nmap <silent> <leader>[ :vertical resize -15<CR>
 nmap <silent> <leader>] :vertical resize +15<CR>
-
+nmap <silent> <leader>r :GoRun <CR>
+nmap <silent> <leader>b :GoBuild <CR>
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
 
 " PEP-008: This colors lines over 120 characters long, python files only.
-augroup vimrc_autocmds
-  autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
-  autocmd BufEnter *.py match OverLength /\%120v.*/
-augroup END
+" augroup vimrc_autocmds
+"   autocmd BufEnter *.py match OverLength /\%120v.*/
+" augroup END
 
 "----------------------------------------------------------------------------------------------------------------------
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 let g:solarized_termcolors=256
-colorscheme distinguished
-"set background=dark
+let g:spacegray_low_contrast=1
+colorscheme spacegray
+set background=dark
 
 highlight ColorColumn ctermbg=235
 

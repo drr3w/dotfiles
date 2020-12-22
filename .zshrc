@@ -15,8 +15,8 @@ fi
 #-------------------------------------------------------------------------------
 
 ZSH=$HOME/.oh-my-zsh
-#ZSH_THEME="simple"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="simple"
 # DISABLE_AUTO_UPDATE="true"
 ENABLE_CORRECTION="true"
 export UPDATE_ZSH_DAYS=30
@@ -26,7 +26,7 @@ export UPDATE_ZSH_DAYS=30
 #-------------------------------------------------------------------------------
 # Required for auto suggest
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-plugins=(git tmux python golang jira zsh-autosuggestions)
+plugins=(git tmux python jira zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 #-------------------------------------------------------------------------------
@@ -38,6 +38,12 @@ export GOPATH=$HOME/Code/go
 #-------------------------------------------------------------------------------
 # User configuration
 #-------------------------------------------------------------------------------
+
+# lets set a good TERM value for when we ssh, most things dont like xterm-termite
+export TERM='xterm-256color'
+
+# This is for stats printouts like mpstat
+export S_COLORS='H=31;1:I=32;22:M=35;1:N=34;1:Z=34;22'
 
 export PATH='/home/etch/.local/bin':$GOPATH:$PATH:'/usr/local/go/bin'
 
@@ -74,4 +80,4 @@ function spectrum_ls() {
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

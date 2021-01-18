@@ -1,4 +1,3 @@
-### dotfiles++
+# dotfiles
 
-You know how this works. 
-
+Also some other random stuff

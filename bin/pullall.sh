@@ -10,15 +10,21 @@ TC='\e['
 
 Bold="${TC}1m"    # Bold text only, keep colors
 Rst="${TC}0m"     # Reset all coloring and style
-Yellow="${TC}34m"; 
+Purple="${TC}35m"; 
+Green="${TC}32m"; 
 
 for dir in `ls`; do
     if [ -d $dir ]; then
         cd $dir
         if [ -d ".git" ]; then
-            echo -e "${Bold}${Yellow}$dir:${Rst}"
+            git stash || exit
+            git checkout master || exit
+            echo -e "${Bold}${Purple}$dir:${Rst}"
             git pull
+            git checkout - 
+            git stash pop
         fi
         cd ..
     fi
 done
+echo -e "${Bold}${Green}Done!${Rst}"

@@ -8,23 +8,37 @@
 #-------------------------------------------------------------------------------
 
 ZSH=$HOME/.oh-my-zsh
-
 ZSH_THEME="simple"
-DISABLE_AUTO_UPDATE="false"
 ENABLE_CORRECTION="false"
-
-# how often before auto-updates occur? (in days)
+export UPDATE_ZSH_DAYS=30
 export UPDATE_ZSH_DAYS=30
 
-plugins=(git python tmux)
+#-------------------------------------------------------------------------------
+# plugins 
+#-------------------------------------------------------------------------------
+# Required for auto suggest
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+plugins=(git tmux python jira zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+#-------------------------------------------------------------------------------
+# Go specifics
+#-------------------------------------------------------------------------------
+
+export GOPATH=$HOME/Code/go
 
 #-------------------------------------------------------------------------------
 # User configuration
 #-------------------------------------------------------------------------------
 
-export PATH=/usr/local/go/bin:$PATH
+# lets set a good TERM value for when we ssh, most things dont like xterm-termite
+export TERM='xterm-256color'
+
+# This is for stats printouts like mpstat
+export S_COLORS='H=31;1:I=32;22:M=35;1:N=34;1:Z=34;22'
+
+export PATH='/home/etch/.local/bin':$GOPATH:$PATH:'/usr/local/go/bin'
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 
@@ -44,9 +58,17 @@ export LESS_TERMCAP_so=$'\E[48;5;88m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 
+# JIRA config
+export JIRA_URL='https://jira.moj.io'
+
+
 #-------------------------------------------------------------------------------
-# Go specifics
+# User functions
 #-------------------------------------------------------------------------------
 
-export GOPATH=$HOME/Code/go
-export GOBIN=$HOME/Code/go/bin
+function spectrum_ls() {
+   for code in {000..255}; do
+       print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
+   done
+}
+

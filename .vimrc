@@ -12,7 +12,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'ycm-core/youcompleteme'
@@ -23,6 +22,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'junegunn/fzf'
 call vundle#end()            " required
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -30,11 +30,9 @@ call vundle#end()            " required
 "----------------------------------------------------------------------------------------------------------------------
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" if executable('grep')
-"   let g:ctrlp_user_command = 'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
-" endif
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
 "----------------------------------------------------------------------------------------------------------------------
@@ -44,6 +42,7 @@ abbr hte the
 abbr emmg etch.himself@gmail.com
 
 iab <expr> ddate strftime("## %a, %b %d")
+
 "----------------------------------------------------------------------------------------------------------------------
 " Syntastic settings
 "----------------------------------------------------------------------------------------------------------------------
@@ -89,27 +88,26 @@ set bs=eol,start,indent             " controlling how backspace behaves. see :he
 "----------------------------------------------------------------------------------------------------------------------
 let mapleader=","
 nmap <silent> <C-h> :nohlsearch <CR>
+nmap <silent> <C-f> :FZF <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-" nmap <silent> <leader>gd :YcmCompleter GoTo<CR>
-" nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
 nmap <silent> <leader>Gc :Git commit -v<CR>
 nmap <silent> <leader>Ga :Git add %<CR>
 nmap <silent> <leader>I :%!python -m json.tool<CR>
 nmap <silent> <leader>[ :vertical resize -15<CR>
 nmap <silent> <leader>] :vertical resize +15<CR>
-
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
 
 " PEP-008: This colors lines over 80 characters long, python files only.
 augroup vimrc_autocmds
-  autocmd BufEnter *.py highlight OverLength ctermbg=124 ctermfg=266 guibg=#111111
+  autocmd BufEnter *.py highlight OverLength ctermfg=196 guibg=#111111
   autocmd BufEnter *.py match OverLength /\%120v.*/
-  autocmd BufEnter *.sh highlight ShellOverLength ctermbg=124 ctermfg=266 guibg=#111111
+  autocmd BufEnter *.md set spell wrap linebreak nolist textwidth=120
+  autocmd BufEnter *.sh highlight ShellOverLength ctermfg=266 guibg=#111111
   autocmd BufEnter *.sh match ShellOverLength /\%80v.*/ " google style guide recommendation for shell scripts
 augroup END
 
@@ -117,10 +115,10 @@ augroup END
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
 
-colorscheme distinguished
-" set background=dark use this with solarized
+colorscheme codeschool
+" set background=light
 
-highlight ColorColumn ctermbg=124
+highlight ColorColumn ctermbg=239
 
 "set fileformat=unix
 

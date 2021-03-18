@@ -16,7 +16,7 @@ ENABLE_CORRECTION="false"
 # how often before auto-updates occur? (in days)
 export UPDATE_ZSH_DAYS=30
 
-plugins=(git python tmux jira zsh-autosuggestions) 
+plugins=(git python tmux jira zsh-autosuggestions ansible) 
 export JIRA_URL="https://1mojio.atlassian.net"
 
 
@@ -32,10 +32,12 @@ export PATH=/usr/local/share/dotnet:/usr/local/go/bin:$PATH
 export EDITOR=`which vim` 
 
 # Sane ls colors (remove the 1 before the ; if not using transparent terminal background)
-export LS_COLORS='di=1;35:ln=1;36:so=32:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
-
-# Source aliases
-source ~/.dotfiles/zsh/zsh-aliases
+# For dark terminals
+# export LS_COLORS='di=1;35:ln=1;36:so=32:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+# Light terminals
+# export LS_COLORS='di=35:ln=33:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+# LS_COLORS is for linux not BSD (macOS)
+export LSCOLORS='fxdxcxdxbxegedabagacad'
 
 # colorize man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -46,9 +48,35 @@ export LESS_TERMCAP_so=$'\E[48;5;88m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;222m' # begin underline
 
+
+#-------------------------------------------------------------------------------
+# Aliases
+#-------------------------------------------------------------------------------
+if ls --color=auto &> /dev/null
+then
+    # GNU ls
+    alias ls='ls -F --color=auto'
+else
+    # BSD ls
+    alias ls='ls -GF'
+fi
+
+alias vi='vim'
+alias shazaam="curl -s https://httpbin.org/ip | grep origin | cut -d '\"' -f4 | pbcopy && echo 'IP copied to clipboard'"
+alias gk="cat ~/.ssh/keys/mojioadmin.pub | pbcopy && echo 'mojioadmin pub key copied to clipboard'" 
+alias ssh='TERM=xterm-256color ssh'
+alias azenv='source ~/Code/.virtualenvs/azure-cli/bin/activate'
+
 #-------------------------------------------------------------------------------
 # Go specifics
 #-------------------------------------------------------------------------------
 
 export GOPATH=$HOME/Code/go
 export GOBIN=$HOME/Code/go/bin
+
+#-------------------------------------------------------------------------------
+# k8s stuff
+#-------------------------------------------------------------------------------
+
+export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/kubeconfig-ss 
+

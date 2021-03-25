@@ -1,0 +1,14 @@
+{
+    // python specific stuff. pep8-y
+    "[python]": {
+          "editor.rulers": [80]
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#333",
+        "sideBar.background": "#222"
+    },
+    "workbench.colorTheme": "Code School 3",
+    "editor.fontFamily": "Iosevka Term",
+    "editor.fontSize": 14
+
+}

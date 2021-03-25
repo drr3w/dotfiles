@@ -72,7 +72,7 @@ rofi.theme: ~/.config/rofi/themes/term-dark.theme
 rofi.show-icons: false
 
 ! Font for rofi to use
-rofi.font: InputMonoCondensed 10
+rofi.font: Iosevka Term 10
 
 ! All colors are either hex #rrggbb, #aarrggbb or argb:aarrggbbvalues or X11 color names.
 
@@ -183,7 +183,7 @@ rofi.parse-known-hosts: true
 ! ----------------------------------------------------------------------------
 
 ! Set the name to use for run mode. This is used as prompt and in combi-browser.
-rofi.display-run:
+rofi.display-run: :    
 
 ! Set the name to use for drun mode. This is used as prompt and in combi-browser.
 rofi.display-drun:
@@ -242,7 +242,7 @@ rofi.kb-primary-paste: Control+V
 rofi.kb-secondary-paste: Control+v
 
 ! Clear input line
-rofi.kb-clear-line: Control+u
+! rofi.kb-clear-line: Control+u
 
 ! Beginning of line
 rofi.kb-move-front:
@@ -263,7 +263,7 @@ rofi.kb-move-char-back: Left
 rofi.kb-move-char-forward: Right
 
 ! Delete previous word
-rofi.kb-remove-word-back: Control+w
+! rofi.kb-remove-word-back: Control+w
 
 ! Delete next word
 rofi.kb-remove-word-forward:
@@ -287,7 +287,7 @@ rofi.kb-remove-to-sol:
 rofi.kb-accept-entry: Control+j,Return
 
 ! Use entered text as command (in ssh/run modi)
-rofi.kb-accept-custom: Control+d
+! rofi.kb-accept-custom: Control+d
 
 ! Launch the application in a terminal (in run mode).
 ! Return the selected entry and move to the next item while keeping Rofi open. (in dmenu)
@@ -330,10 +330,10 @@ rofi.kb-row-first:
 rofi.kb-row-last:
 
 ! Set selected item as input text
-rofi.kb-row-select: Control+a
+! rofi.kb-row-select: Control+a
 
 ! Take a screenshot of the rofi window
-rofi.kb-screenshot: Control+space
+! rofi.kb-screenshot: Control+space
 
 ! Toggle case sensitivity
 rofi.kb-toggle-case-sensitivity: Control+i
@@ -402,3 +402,4 @@ rofi.kb-custom-18: Alt+asterisk
 rofi.kb-custom-19: Alt+parenleft
 
 ! vim: ft=xdefaults cms=!\ %s
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark-mod.rasi

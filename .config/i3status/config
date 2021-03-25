@@ -3,17 +3,18 @@ general {
     colors = true  
     color_good =     '#8BB664'  
     color_degraded = '#ccdc90'  
-    color_bad =      '#DDA790'   
+    color_bad =      '#a51818'   
 }
 
 order += "wireless wlp58s0"
-order += "cpu_temperature 0"
+# order += "cpu_temperature 0"
 order += "volume master"
 order += "battery 0"
 order += "tztime local"
 
 wireless wlp58s0 {
-  format_up = " WiFi  [%quality | %essid | %ip] "
+  #format_up = " WiFi  [%quality | %essid | %ip] "
+  format_up = "(%quality at %essid, %bitrate / %frequency) %ip"
   format_down = " WiFi  [disconnected] "
 }
 
@@ -34,10 +35,13 @@ volume master {
 }
 
 battery 0 {
-  format = " %status [%percentage %remaining] "
+  # format = " %status [%percentage %remaining] "
+  format = " %status [%percentage] "
   status_chr = "⚇ CHR"
   status_bat = "⚡ BAT"
   status_full = "☻ FULL"
-  low_threshold = 10
-  threshold_type = percent
+  low_threshold = "10"
+  threshold_type = "percent"
+  integer_battery_capacity = true
+  hide_seconds = true
 }

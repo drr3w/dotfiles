@@ -4,6 +4,11 @@
 # .xinitrc
 # 
 
+# disable caps lock by remapping it to ctrl, not necessary on lemp9.
+# its done in the firmware
+
+# setxkbmap -option ctrl:nocaps
+
 # Ensure that the D-Bus Communication System is running properly to fix
 # Slack, file management, authentication, and other essential system processes
 

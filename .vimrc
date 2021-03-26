@@ -23,6 +23,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'nvie/vim-flake8'
 Plug 'vim-syntastic/syntastic'
 call plug#end()            " required
 
@@ -49,6 +51,14 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 "----------------------------------------------------------------------------------------------------------------------
+" ctrlp settings
+"----------------------------------------------------------------------------------------------------------------------
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
+"----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
 "----------------------------------------------------------------------------------------------------------------------
 
@@ -58,6 +68,17 @@ abbr hte the
 abbr emmg etch.himself@gmail.com
 iab <expr> ddate strftime("## %a, %b %d")
 
+"----------------------------------------------------------------------------------------------------------------------
+" Syntastic settings
+"----------------------------------------------------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
@@ -95,10 +116,10 @@ set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 "----------------------------------------------------------------------------------------------------------------------
 " Some nice keyboard shortcuts
 "----------------------------------------------------------------------------------------------------------------------
-
 let mapleader=","
 
 nmap <silent> <C-h> :nohlsearch <CR>
+nmap <silent> <C-f> :FZF <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
@@ -116,22 +137,25 @@ nmap <silent> <leader>b :GoBuild <CR>
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
 
-" PEP-008: This colors lines over 120 characters long, python files only.
-" augroup vimrc_autocmds
-"   autocmd BufEnter *.py match OverLength /\%120v.*/
-" augroup END
+augroup vimrc_autocmds
+  autocmd BufEnter *.py highlight OverLength ctermfg=196 guibg=#111111
+  autocmd BufEnter *.py match OverLength /\%120v.*/
+  autocmd BufEnter *.md set spell wrap linebreak nolist textwidth=120
+  autocmd BufEnter *.sh highlight ShellOverLength ctermfg=266 guibg=#111111
+  autocmd BufEnter *.sh match ShellOverLength /\%80v.*/ " google style guide recommendation for shell scripts
+augroup END
 
 "----------------------------------------------------------------------------------------------------------------------
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
-let g:solarized_termcolors=256
-let g:spacegray_low_contrast=1
-colorscheme distinguished
-set background=dark
+" let g:solarized_termcolors=256
+" let g:spacegray_low_contrast=1
+" set background=dark
+colorscheme codeschool
 
-highlight ColorColumn ctermbg=235
+highlight ColorColumn ctermbg=239
 
-set fileformat=unix
+"set fileformat=unix
 
 set showmatch           " show matching brackets
 set matchtime=3
@@ -154,7 +178,6 @@ set nowrap	            " Turn off long line wrapping
 set nowrapscan          " Dont wrap when searching
 set showmode            " Always show which mode we're in
 set number              " show line numbers
-"set relativenumber      " use relative line numbers
 set cursorline          " highlight the line the cursor is currently on
 set foldmethod=indent   " code fold based on indentation 
 set wildmode=list:full

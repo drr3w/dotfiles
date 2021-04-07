@@ -21,6 +21,8 @@ export UPDATE_ZSH_DAYS=30
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 plugins=(git tmux python golang jira zsh-autosuggestions)
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=109'
+
 export JIRA_URL="https://1mojio.atlassian.net" # required for jira plugin
 
 source $ZSH/oh-my-zsh.sh
@@ -99,3 +101,9 @@ function spectrum_ls() {
    done
 }
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/etch/google-cloud-sdk/path.zsh.inc' ]; then . '/home/etch/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/etch/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/etch/google-cloud-sdk/completion.zsh.inc'; fi

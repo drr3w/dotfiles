@@ -1,9 +1,26 @@
 set $mod Mod1
 set $term termite
 
+
+#----------------------------------------------------------------------------------
+# i3 gaps
+#----------------------------------------------------------------------------------
+
+# Remove window titles. This is required for i3-gaps to work
+# You can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 0
+
+gaps inner 5
+gaps outer 5
+
+# Activate smart borders (always)
+smart_borders on
+
 #----------------------------------------------------------------------------------
 # Window settings 
 #----------------------------------------------------------------------------------
+
+
 # window focus should follow the mouse
 focus_follows_mouse yes
 
@@ -161,26 +178,26 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #----------------------------------------------------------------------------------
 
-# bar {
-#         font pango:Monospace 12
-#         status_command i3status
-#         position top
-#         tray_output primary
-# 		colors {
-			#color class       border  back.   text
-#			focused_workspace  #222200 #222200 #ccbb55
-#			active_workspace   #555555 #555555 #ffffff
-#			inactive_workspace #000000 #000000 #888888
-#			urgent_workspace   #2f343a #900000 #ffffff
- #   	}	
-#}
+ bar {
+         font pango:Monospace 10
+         status_command i3status
+         position top
+         tray_output primary
+ 		colors {
+			# color class       border  back.   text
+			focused_workspace  #222200 #222200 #ccbb55
+			active_workspace   #555555 #555555 #ffffff
+			inactive_workspace #000000 #000000 #888888
+			urgent_workspace   #2f343a #900000 #ffffff
+    	}	
+}
 
 #----------------------------------------------------------------------------------
 # Colors               
 #----------------------------------------------------------------------------------
 
                             #border  backgr. text    indicator
-client.focused              #000000 #000000 #ccbb55 #2b2b2b
+client.focused              #ffffff #000000 #ccbb55 #2b2b2b
 client.focused_inactive     #000000 #000000 #555511 #2b2b2b
 client.unfocused            #000000 #000000 #555511 #2b2b2b
 client.urgent               #900000 #900000 #ffffff #2b2b2b
@@ -192,4 +209,3 @@ exec nm-applet
 exec compton 
 exec sh ~/.fehbg
 exec redshift
-exec polybar -r main

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DOTDIR=$HOME/'.dotfiles'
+GITHOOKS=$DOTDIR/.git/hooks 
 FILES=(".vimrc" ".tmux.conf" ".zshrc" ".gitconfig" ".gitignore_global")
 
 echo "Setting up dotfiles..."
@@ -8,4 +9,6 @@ for each in ${FILES[@]}; do
     echo "Linking $each"
     ln -s $DOTDIR/$each .
 done
+echo "Setting up pre-commit hook"
+ln -s $DOTDIR/'.pre-commit' $GITHOOKS/'pre-commit' || echo "Unable to setup git hook, missing directories?" && exit 1
 echo "Done."

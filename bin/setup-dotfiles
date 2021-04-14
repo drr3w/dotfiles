@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DOTDIR=$HOME/'.dotfiles'
+FILES=(".vimrc" ".tmux.conf" ".zshrc" ".gitconfig" ".gitignore_global")
+
+echo "Setting up dotfiles..."
+for each in ${FILES[@]}; do 
+    echo "Linking $each"
+    ln -s $DOTDIR/$each .
+done
+echo "Done."

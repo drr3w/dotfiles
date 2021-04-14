@@ -1,0 +1,39 @@
+[general]
+ui = ttyui
+accounts = etch
+fsync = False
+
+[Account etch]
+localrepository = etch-Local
+remoterepository = etch-Remote
+postsynchook = notmuch new
+
+[Repository etch-Local]
+type = Maildir
+localfolders = ~/.mail/gmail
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository etch-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = etch.himself@gmail.com
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             'Nagios',
+                                             'Django',
+                                             'Flask',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

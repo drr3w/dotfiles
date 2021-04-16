@@ -1,0 +1,4 @@
+#!/bin/bash
+FORBIDDEN='^.*pass.*'
+git diff --cached --name-only |  xargs grep --with-filename -n $FORBIDDEN && echo "COMMIT REJECTED Found '$FORBIDDEN' references. Please remove them before commiting" && exit 1
+echo "test"

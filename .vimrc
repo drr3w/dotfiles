@@ -17,7 +17,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -79,7 +78,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 "----------------------------------------------------------------------------------------------------------------------
 " Statusline  setting
 "----------------------------------------------------------------------------------------------------------------------
@@ -133,6 +131,9 @@ nmap <silent> <leader>[ :vertical resize -15<CR>
 nmap <silent> <leader>] :vertical resize +15<CR>
 nmap <silent> <leader>r :GoRun <CR>
 nmap <silent> <leader>b :GoBuild <CR>
+nmap <silent> <leader>f :FindAllInFile <CR>
+nmap <silent> <leader>c :cclose <CR>
+nmap <silent> <leader>l :lclose <CR>
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
@@ -185,6 +186,8 @@ set wildmode=list:full
 "----------------------------------------------------------------------------------------------------------------------
 " User defined functions
 "----------------------------------------------------------------------------------------------------------------------
+
+command FindAllInFile :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen 
 
 function! ColorColumnToggle()
     if &cc

@@ -16,6 +16,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
@@ -134,6 +135,7 @@ nmap <silent> <leader>b :GoBuild <CR>
 nmap <silent> <leader>f :FindAllInFile <CR>
 nmap <silent> <leader>c :cclose <CR>
 nmap <silent> <leader>l :lclose <CR>
+nmap <silent> <leader>s :call SpellToggle() <CR>
 "----------------------------------------------------------------------------------------------------------------------
 " Autocommands
 "----------------------------------------------------------------------------------------------------------------------
@@ -194,6 +196,14 @@ function! ColorColumnToggle()
         setlocal cc=0
     else
         setlocal cc=80
+    endif
+endfunction
+
+function! SpellToggle()
+    if &spell 
+        set nospell
+    else
+        set spell
     endif
 endfunction
 

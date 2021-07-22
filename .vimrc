@@ -16,14 +16,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'dbridges/vim-markdown-runner'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'fatih/vim-go'
-Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf'
 Plug 'nvie/vim-flake8'
 Plug 'vim-syntastic/syntastic'
 call plug#end()            " required
@@ -118,20 +116,10 @@ set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 let mapleader=","
 
 nmap <silent> <C-h> :nohlsearch <CR>
-nmap <silent> <C-f> :FZF <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-L> :call ColorColumnToggle()<CR>
 nmap <silent> <C-Y> :call LineNumberToggle()<CR>
-nmap <silent> <leader>gd :YcmCompleter GoTo<CR>  
-nmap <silent> <leader>gr :YcmCompleter GoToReferences<CR>  
-nmap <silent> <leader>Gc :Git commit<CR>
-nmap <silent> <leader>Ga :Git add %<CR>
-nmap <silent> <leader>I :%!python -m json.tool<CR>
-nmap <silent> <leader>[ :vertical resize -15<CR>
-nmap <silent> <leader>] :vertical resize +15<CR>
-nmap <silent> <leader>r :GoRun <CR>
-nmap <silent> <leader>b :GoBuild <CR>
 nmap <silent> <leader>f :FindAllInFile <CR>
 nmap <silent> <leader>c :cclose <CR>
 nmap <silent> <leader>l :lclose <CR>
@@ -146,6 +134,8 @@ augroup vimrc_autocmds
   autocmd BufEnter *.md set spell wrap linebreak nolist textwidth=120
   autocmd BufEnter *.sh highlight ShellOverLength ctermfg=266 guibg=#111111
   autocmd BufEnter *.sh match ShellOverLength /\%80v.*/ " google style guide recommendation for shell scripts
+  autocmd Filetype markdown nnoremap <buffer> <leader>r :MarkdownRunner<CR>
+  autocmd Filetype markdown nnoremap <buffer> <leader>R :MarkdownRunnerInsert<CR>
 augroup END
 
 "----------------------------------------------------------------------------------------------------------------------

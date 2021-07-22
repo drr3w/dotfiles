@@ -26,6 +26,14 @@ Plug 'nvie/vim-flake8'
 Plug 'vim-syntastic/syntastic'
 call plug#end()            " required
 
+
+"----------------------------------------------------------------------------------------------------------------------
+" Syntax highlighting in Markdown
+"----------------------------------------------------------------------------------------------------------------------
+
+au BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'django', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'php', 'python', 'ruby', 'sass', 'xml', 'html']
+
 "----------------------------------------------------------------------------------------------------------------------
 " Syntastic settings
 "----------------------------------------------------------------------------------------------------------------------
@@ -137,6 +145,9 @@ augroup vimrc_autocmds
   autocmd Filetype markdown nnoremap <buffer> <leader>r :MarkdownRunner<CR>
   autocmd Filetype markdown nnoremap <buffer> <leader>R :MarkdownRunnerInsert<CR>
 augroup END
+
+autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 "----------------------------------------------------------------------------------------------------------------------
 " Settings

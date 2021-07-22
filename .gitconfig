@@ -1,9 +1,8 @@
 [user]
-	email = drew@moj.io 
-	name = drr3w
-	signingkey = 81BB4EAF420B596B
+	email = hersh4@llnl.gov 
+	name = Andrew Hersh
 [core]
-    excludesfile = /Users/etch/.gitignore_global
+    excludesfile = /Users/hersh4/.gitignore_global
 [status]
 	showUntrackedFiles = no
 [format]

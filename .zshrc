@@ -23,7 +23,7 @@ plugins=(git tmux python golang jira zsh-autosuggestions)
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=109'
 
-export JIRA_URL="https://1mojio.atlassian.net" # required for jira plugin
+export JIRA_URL="https://myjira.llnl.gov" # required for jira plugin
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,10 +87,10 @@ fi
 
 alias vi='vim'
 alias shazaam="curl -s https://httpbin.org/ip | grep origin | cut -d '\"' -f4 | pbcopy && echo 'IP copied to clipboard'"
-alias gk="cat ~/.ssh/keys/mojioadmin.pub | pbcopy && echo 'mojioadmin pub key copied to clipboard'" 
 alias ssh='TERM=xterm-256color ssh'
-alias azenv='source ~/Code/.virtualenvs/azure-cli/bin/activate'
-
+alias pivs='/usr/bin/ssh-add -s /usr/lib/ssh-keychain.dylib'
+alias pive='/usr/bin/ssh-add -e /usr/lib/ssh-keychain.dylib'
+alias pivl='/usr/bin/ssh-add -l'
 #-------------------------------------------------------------------------------
 # User functions
 #-------------------------------------------------------------------------------

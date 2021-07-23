@@ -16,6 +16,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'dbridges/vim-markdown-runner'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
@@ -23,8 +25,12 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'nvie/vim-flake8'
+Plug 'tmhedberg/SimpylFold'     " this is python specific folding
 Plug 'vim-syntastic/syntastic'
 call plug#end()            " required
+
+
+
 
 
 "----------------------------------------------------------------------------------------------------------------------
@@ -123,6 +129,9 @@ set bs=eol,start,indent      " controlling how backspace behaves. see :help bs
 "----------------------------------------------------------------------------------------------------------------------
 let mapleader=","
 
+" Code folding, map space to open and close folds
+nnoremap <space> za
+vnoremap <space> zf
 nmap <silent> <C-h> :nohlsearch <CR>
 nmap <silent> <C-T> :TagbarToggle<CR>
 nmap <silent> <C-N> :NERDTreeToggle<CR>

@@ -49,7 +49,7 @@ export TERM='xterm-256color'
 # This is for stats printouts like mpstat
 export S_COLORS='H=31;1:I=32;22:M=35;1:N=34;1:Z=34;22'
 
-export PATH=/home/etch/.local/bin:/usr/local/share/dotnet:/usr/local/go/bin:$GOPATH:$PATH
+export PATH=/home/etch/.local/bin:/usr/local/go/bin:$GOPATH:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
 export EDITOR=`which vim` 
@@ -91,19 +91,3 @@ alias ssh='TERM=xterm-256color ssh'
 alias pivs='/usr/bin/ssh-add -s /usr/lib/ssh-keychain.dylib'
 alias pive='/usr/bin/ssh-add -e /usr/lib/ssh-keychain.dylib'
 alias pivl='/usr/bin/ssh-add -l'
-#-------------------------------------------------------------------------------
-# User functions
-#-------------------------------------------------------------------------------
-
-function spectrum_ls() {
-   for code in {000..255}; do
-       print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
-   done
-}
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/etch/google-cloud-sdk/path.zsh.inc' ]; then . '/home/etch/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/etch/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/etch/google-cloud-sdk/completion.zsh.inc'; fi

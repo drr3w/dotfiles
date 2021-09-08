@@ -16,8 +16,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'dbridges/vim-markdown-runner'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
@@ -25,8 +23,11 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'nvie/vim-flake8'
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'       " alternative to syntastic, works async so it doesnt slow down vim startup
 Plug 'tmhedberg/SimpylFold'     " this is python specific folding
-Plug 'vim-syntastic/syntastic'
+Plug 'CoatiSoftware/vim-sourcetrail'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()            " required
 
 
@@ -161,10 +162,9 @@ autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shel
 "----------------------------------------------------------------------------------------------------------------------
 " Settings
 "----------------------------------------------------------------------------------------------------------------------
-" let g:solarized_termcolors=256
 " let g:spacegray_low_contrast=1
-" set background=dark
-colorscheme codeschool
+set background=light
+colorscheme solarized
 
 highlight ColorColumn ctermbg=239
 
@@ -187,12 +187,15 @@ set hlsearch            " highlight search
 set ignorecase          " ignore case during searches
 set autoindent          " 
 set smartindent         "  
-set nowrap	            " Turn off long line wrapping
+set wrap                " explicitly enable line wrapping
+set linebreak           " don't add linebreaks unless i hit enter
+"set nowrap	            " Turn off long line wrapping
 set nowrapscan          " Dont wrap when searching
 set showmode            " Always show which mode we're in
 set number              " show line numbers
 set cursorline          " highlight the line the cursor is currently on
 set foldmethod=indent   " code fold based on indentation 
+set updatetime=100      " time to update the interface, eg. time to update git gutter marks
 set wildmode=list:full
 
 "----------------------------------------------------------------------------------------------------------------------

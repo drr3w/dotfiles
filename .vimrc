@@ -39,7 +39,7 @@ call plug#end()            " required
 "----------------------------------------------------------------------------------------------------------------------
 
 au BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['bash=sh', 'css', 'django', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'php', 'python', 'ruby', 'sass', 'xml', 'html']
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'django', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'php', 'python', 'python3=python', 'ruby', 'sass', 'xml', 'html']
 
 "----------------------------------------------------------------------------------------------------------------------
 " Syntastic settings
@@ -53,23 +53,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-"----------------------------------------------------------------------------------------------------------------------
-" Ctrl-P fuzzy path finder 
-"----------------------------------------------------------------------------------------------------------------------
-
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-
-"----------------------------------------------------------------------------------------------------------------------
-" ctrlp settings
-"----------------------------------------------------------------------------------------------------------------------
-
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 "----------------------------------------------------------------------------------------------------------------------
 " Abbreviations 
@@ -99,6 +82,7 @@ let g:syntastic_check_on_wq = 0
 set statusline=[%F]                               " filename
 set statusline+=%{fugitive#statusline()} 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% 
+
 "----------------------------------------------------------------------------------------------------------------------
 " Tagbar settings
 "----------------------------------------------------------------------------------------------------------------------

@@ -148,7 +148,7 @@ autocmd FileType python imap <buffer> <leader>r <esc>:w<CR>:exec '!python3' shel
 "----------------------------------------------------------------------------------------------------------------------
 " let g:spacegray_low_contrast=1
 set background=light
-colorscheme solarized
+colorscheme codeschool
 
 highlight ColorColumn ctermbg=239
 

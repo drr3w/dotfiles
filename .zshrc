@@ -85,7 +85,7 @@ else
     alias ls='ls -GF'
 fi
 
-alias vi='vim'
+alias vi='nvim'
 alias shazaam="curl -s https://httpbin.org/ip | grep origin | cut -d '\"' -f4 | pbcopy && echo 'IP copied to clipboard'"
 alias ssh='TERM=xterm-256color ssh'
 alias pivs='/usr/bin/ssh-add -s /usr/lib/ssh-keychain.dylib'

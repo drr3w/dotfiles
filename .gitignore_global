@@ -57,3 +57,9 @@ Thumbs.db
 
 .idea
 .vscode
+
+#------------------------#
+# packer                 #
+#------------------------#
+packer_compiled.lua
+

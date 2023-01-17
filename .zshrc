@@ -43,7 +43,6 @@ export KUBECONFIG=$KUBECONFIG:$HOME/.kube/config:$HOME/.kube/kubeconfig-ss
 # User configuration
 #-------------------------------------------------------------------------------
 
-# lets set a good TERM value for when we ssh, most things dont like xterm-termite
 export TERM='xterm-256color'
 
 # This is for stats printouts like mpstat
@@ -52,7 +51,7 @@ export S_COLORS='H=31;1:I=32;22:M=35;1:N=34;1:Z=34;22'
 export PATH=/home/etch/.local/bin:/usr/local/go/bin:$GOPATH:$PATH
 
 # fix for git commait -a issue if $EDITOR is unset
-export EDITOR=`which vim` 
+export EDITOR=`which nvim` 
 
 # Sane ls colors (remove the 1 before the ; if not using transparent terminal background)
 # For dark terminals

@@ -1,7 +1,8 @@
 #--------------------------------------------------------------------
 #
 # .muttrc - mutt config file
-#
+#  
+#  Do use this you will need to add smtp and imap passwords
 #--------------------------------------------------------------------
 
 
@@ -16,8 +17,6 @@ set spoolfile = "+INBOX"
 set postponed = "+[GMail]/Drafts"
 
 set imap_user = USER
-set imap_pass = PASSWORD
-set smtp_pass = PASSWORD
 set record = ''          # set record blank since we're using google smtp and it saves sent mails
 set from= FROM EMAIL
 set smtp_url = 'smtp://USER@smtp.gmail.com:587'
@@ -31,6 +30,7 @@ set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
 set move = no
 set imap_keepalive = 900
+set smtp_authenticators = 'gssapi:login'
 
 #--------------------------------------------------------------------
 # My custom  settings

@@ -8,7 +8,7 @@ require("etch.packer") -- corresponds to ~/.config/nvim/lua/hersh4/packer.lua
 -- colorscheme config 
 ---------------------------------
 vim.opt.termguicolors = true
-vim.cmd('colorscheme edge')
+vim.cmd('colorscheme melange')
 vim.o.background = "dark"
 vim.g.edge_style = 'aura' 
 vim.g.edge_dim_foreground = 1

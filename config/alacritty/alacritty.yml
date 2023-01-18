@@ -1,0 +1,21 @@
+import:
+  - ~/.config/alacritty/colors/insignificato.yml
+font:
+  normal:
+    family: Hack Nerd Font 
+  bold:
+    family: Hack
+    style: Bold
+  italic:
+    family: Hack
+    style: Italic
+  bold_italic:
+    family: Hack
+    style: Bold Italic
+  size: 14.0
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
+    blink_interval: 750

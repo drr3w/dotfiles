@@ -5,7 +5,7 @@ text-width 120
 feed-sort-order unreadarticlecount-asc
 urls-source oldreader
 oldreader-login ""
-oldreader-password ""
+oldreader-p-ssword "" # change to the correct spelling
 
 # Colors
 

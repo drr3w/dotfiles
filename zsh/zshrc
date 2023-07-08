@@ -90,3 +90,5 @@ alias ssh='TERM=xterm-256color ssh'
 alias pivs='/usr/bin/ssh-add -s /usr/lib/ssh-keychain.dylib'
 alias pive='/usr/bin/ssh-add -e /usr/lib/ssh-keychain.dylib'
 alias pivl='/usr/bin/ssh-add -l'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

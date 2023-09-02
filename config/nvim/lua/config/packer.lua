@@ -3,17 +3,13 @@
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    -------------------- Telescope: fuzzy finder ------------------------------
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    ------------------- Treesitter: syntax coloring plugin --------------------
     use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
-    ------------------- null-ls -----------------------------------------------
     use ({'jose-elias-alvarez/null-ls.nvim'})
-    ------------------- lsp-zero: language server------------------------------
     use( {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -35,7 +31,6 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     })
-    -------------------- nvim-tree: nerdtree replacement ----------------------
     use({
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -43,19 +38,13 @@ return require('packer').startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     })
-    -------------------- vim-commentary: code commenting plugin ---------------
     use('tpope/vim-commentary')
     use('airblade/vim-gitgutter')
-    -------------------- kanagawa colorscheme ---------------------------------
+    --------------------  colorschemes  ---------------------------------------
     use('rebelot/kanagawa.nvim')
-    -------------------- melange colorscheme ----------------------------------
     use('savq/melange')
-    -------------------- everforest colorscheme -------------------------------
     use('sainnhe/everforest')
-    -------------------- Zenburn colorscheme ----------------------------------
     use("phha/zenburn.nvim")
-    -------------------- gruvbox colorscheme ----------------------------------
     use("sainnhe/gruvbox-material")
-    -------------------- edge colorscheme -------------------------------------
     use("sainnhe/edge")
 end)

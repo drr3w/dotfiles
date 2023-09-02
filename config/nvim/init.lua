@@ -34,3 +34,6 @@ vim.opt.expandtab = true
 vim.opt.cursorline = true
 vim.g.signcolumn = off
 vim.opt.termguicolors = true
+vim.g.python3_host_prog = "$HOME . 'code/.virtualenvs/dev-3/bin/python'" 
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

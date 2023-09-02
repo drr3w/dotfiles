@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -9,9 +9,11 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    -- Treesitter: syntax coloring plugin
+    ------------------- Treesitter: syntax coloring plugin --------------------
     use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
-    -- lsp-zero: language server
+    ------------------- null-ls -----------------------------------------------
+    use ({'jose-elias-alvarez/null-ls.nvim'})
+    ------------------- lsp-zero: language server------------------------------
     use( {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -43,6 +45,7 @@ return require('packer').startup(function(use)
     })
     -------------------- vim-commentary: code commenting plugin ---------------
     use('tpope/vim-commentary')
+    use('airblade/vim-gitgutter')
     -------------------- kanagawa colorscheme ---------------------------------
     use('rebelot/kanagawa.nvim')
     -------------------- melange colorscheme ----------------------------------

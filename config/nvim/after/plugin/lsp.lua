@@ -6,8 +6,16 @@ lsp.ensure_installed({
     'pylsp',
 })
 
+lsp.nvim_workspace()
+
 local cmp = require('cmp')
-local cmp_mappings = lsp.defaults.cmp_mappings({[" "] = cmp.mapping.complete()})
+
+local cmp_mappings = lsp.defaults.cmp_mappings({
+    ["<Return>"] = cmp.mapping.complete(),
+    ["<Tab>"] = cmp.select_next_item(cmp_select),
+    ["<S-Tab>"] = cmp.select_prev_item(cmp_select),
+
+})
 
 local null_ls = require('null-ls')
 
